@@ -1,0 +1,14 @@
+.course-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 16px; /* Space between grid items */
+    padding: 16px;
+  }
+
+  .course-grid-item {
+    background-color: #f0f0f0;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
