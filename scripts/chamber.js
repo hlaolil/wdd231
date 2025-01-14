@@ -129,3 +129,15 @@ hamButton.addEventListener('click', () => {
         hamButton.setAttribute('aria-expanded', 'false'); // Update ARIA attribute
     }
 });
+
+window.addEventListener('load', function() {
+    const currentLocation = window.location.pathname; // Get current page path
+    const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
+
+    navLinks.forEach(link => {
+        if (link.href.includes(currentLocation)) {
+            link.classList.add('active'); // Add active class to the current page link
+        }
+    });
+});
+
