@@ -308,5 +308,30 @@ main {
 nav ul li a.active {
     color: #4d88bb; /* Change to any color you prefer for active link */
     background-color: #e0e0e0; /* Optional: background highlight for active link */
+}
+.completed {
+    background-color: #d4edda; /* Light green for completed courses */
+    border-color: #c3e6cb;
+}
+
+.incomplete {
+    background-color: #f8d7da; /* Light red for incomplete courses */
+    border-color: #f5c6cb;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+#total-credits {
+    font-weight: bold;
+}
 
 
