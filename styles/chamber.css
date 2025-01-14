@@ -168,6 +168,7 @@ main {
     position: absolute; /* Position for better control */
     top: 25px; /* Adjust as needed */
     right: 15px; /* Adjust as needed */
+    colour: white;
 }
 
 .ham-button .bar {
