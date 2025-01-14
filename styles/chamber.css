@@ -142,7 +142,7 @@ main {
     width: 100%;
     text-align: justify;
 }
-.course-grid-container {
+.course-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 16px; /* Space between grid items */
