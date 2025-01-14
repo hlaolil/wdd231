@@ -141,3 +141,22 @@ window.addEventListener('load', function() {
     });
 });
 
+// Calculate and display total credits for the displayed courses
+    const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
+    totalCreditsDisplay.textContent = totalCredits;
+}
+
+// Initial render of all courses
+renderCourses(courses);
+
+// Event listeners for filter buttons
+document.getElementById('all-courses-btn').addEventListener('click', () => renderCourses(courses));
+document.getElementById('wdd-courses-btn').addEventListener('click', () => {
+    const wddCourses = courses.filter(course => course.subject === 'WDD');
+    renderCourses(wddCourses);
+});
+document.getElementById('cse-courses-btn').addEventListener('click', () => {
+    const cseCourses = courses.filter(course => course.subject === 'CSE');
+    renderCourses(cseCourses);
+});
+
