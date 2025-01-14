@@ -182,21 +182,25 @@ main {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    /* Hamburger Icon */
     .ham-button {
         display: flex; /* Show hamburger icon on small screens */
     }
+
+    /* Navigation (Initially Hidden) */
     .navigation {
-        display: none; /* Initially hidden */
-        transition: max-height 0.3s ease-out; /* Smooth transition */
-        overflow: hidden; /* Hide overflow for animation */
-        max-height: 0; /* Start hidden */
+        display: none; 
+        transition: max-height 0.3s ease-out; 
+        overflow: hidden; 
+        max-height: 0;
     }
-    /* Display navigation when the menu is active */
+
+    /* Show Navigation When Active */
     .navigation.show {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        background-color: grey;
+        background-color: #333; /* Adjust to ensure visibility */
         position: absolute;
         top: 60px; /* Adjust based on header height */
         right: 10px;
@@ -205,9 +209,12 @@ main {
         text-align: left;
         max-height: 500px; /* Adjust based on your content */
     }
-    .navigation a {
-        color: #ffffff; /* Ensure visibility on dark background */
 
+    .navigation a {
+        color: #ffffff;
+    }
+
+    /* Header and Branding */
     .header-branding {
         flex-direction: column;
         align-items: center;
@@ -215,19 +222,21 @@ main {
 
     /* Profile Image */
     .header-branding img {
-        width: 80px;  /* Resize profile image for small screens */
+        width: 80px;
         height: 80px;
     }
 
     /* Main Content */
     .content-area {
         padding: 10px;
+        grid-template-columns: 1fr; /* Stack content vertically on small screens */
     }
 
     /* Section Cards */
     .card {
         margin-bottom: 15px;
         padding: 10px;
+        width: 100%;
     }
 
     /* Footer Adjustments */
@@ -239,6 +248,4 @@ main {
     #symbol-date-name {
         font-size: 14px;
     }
-
-    
-    }}
+}
