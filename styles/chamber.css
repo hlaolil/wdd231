@@ -71,7 +71,8 @@ nav ul li a:hover {
 
 .content-area {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    grid-template-rows: repeat(2, auto); /* Two rows, height adjusts to content */
     gap: 20px;
     padding: 20px;
 }
