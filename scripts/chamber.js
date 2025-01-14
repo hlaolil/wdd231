@@ -88,29 +88,59 @@ const courses = [
         completed: false
     }
 ]
+// Filter courses by subject
+function filterCourses(filter) {
+  switch (filter) {
+    case 'wdd':
+      return courses.filter(course => course.subject === 'WDD');
+    case 'cse':
+      return courses.filter(course => course.subject === 'CSE');
+    default:
+      return courses; // All courses
+  }
+}
+
+// Render courses dynamically
 function renderCourses(filteredCourses) {
-    // Clear previous content
-    coursesDiv.innerHTML = '';
+  const coursesDiv = document.getElementById('courses');
+  coursesDiv.innerHTML = ''; // Clear previous content
 
-    // Render each course
-    filteredCourses.forEach(course => {
-        const courseCard = document.createElement('div');
-        courseCard.className = 'course-grid-item'; // General style for the card
+  let totalCredits = 0;
 
-        // Apply different styles if the course is completed
-        if (course.completed) {
-            courseCard.classList.add('completed');
-        } else {
-            courseCard.classList.add('incomplete');
-        }
+  filteredCourses.forEach(course => {
+    const courseCard = document.createElement('div');
+    courseCard.classList.add('course-card', course.completed ? 'completed' : 'incomplete');
 
     // Populate the card with course details
     courseCard.innerHTML = `
         <p>${course.subject} ${course.number}</p>
     `;
 
-    coursesDiv.appendChild(courseCard); // Append it to the container
+    totalCredits += course.credits; // Accumulate total credits
+
+    coursesDiv.appendChild(courseCard);
+  });
+
+  // Update total credits dynamically
+  const creditDiv = document.getElementById('total-credits');
+  creditDiv.textContent = `Total Credits: ${totalCredits}`;
+}
+
+// Handle button clicks for filtering courses
+document.querySelectorAll('#course-filter-buttons button').forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const filter = event.target.dataset.filter;
+    document.querySelectorAll('#course-filter-buttons button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const filteredCourses = filterCourses(filter);
+    renderCourses(filteredCourses);
+  });
 });
+
+// Initial render for all courses
+renderCourses(courses);
 
 const hamButton = document.querySelector('.ham-button');
 const navigation = document.querySelector('.navigation');
@@ -151,24 +181,5 @@ window.addEventListener('load', function() {
             link.classList.add('active'); // Add active class to the current page link
         }
     });
-});
-
-// Calculate and display total credits for the displayed courses
-    const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
-    totalCreditsDisplay.textContent = totalCredits;
-}
-
-// Initial render of all courses
-renderCourses(courses);
-
-// Event listeners for filter buttons
-document.getElementById('all-courses-btn').addEventListener('click', () => renderCourses(courses));
-document.getElementById('wdd-courses-btn').addEventListener('click', () => {
-    const wddCourses = courses.filter(course => course.subject === 'WDD');
-    renderCourses(wddCourses);
-});
-document.getElementById('cse-courses-btn').addEventListener('click', () => {
-    const cseCourses = courses.filter(course => course.subject === 'CSE');
-    renderCourses(cseCourses);
 });
 
