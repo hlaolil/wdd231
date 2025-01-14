@@ -189,9 +189,9 @@ main {
 
     /* Navigation (Initially Hidden) */
     .navigation {
-        display: none; 
-        transition: max-height 0.3s ease-out; 
-        overflow: hidden; 
+        display: none;
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
         max-height: 0;
     }
 
@@ -230,13 +230,14 @@ main {
     .content-area {
         padding: 10px;
         grid-template-columns: 1fr; /* Stack content vertically on small screens */
+        grid-template-rows: auto; /* Adjust row height automatically */
     }
 
     /* Section Cards */
     .card {
         margin-bottom: 15px;
         padding: 10px;
-        width: 100%;
+        width: 100%; /* Make cards full width on small screens */
     }
 
     /* Footer Adjustments */
@@ -249,3 +250,4 @@ main {
         font-size: 14px;
     }
 }
+
