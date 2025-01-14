@@ -118,7 +118,7 @@ main {
 
 
 }
-.course-grid-item {
+#courses {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 16px; /* Space between grid items */
@@ -241,7 +241,7 @@ main {
         padding: 0 10px;
     }
 
-    .course-gid {
+    #courses {
         display: grid;
         grid-template-columns: 1fr; /* Stack the course items */
         gap: 16px; /* Space between grid items */
