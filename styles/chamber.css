@@ -241,7 +241,7 @@ main {
         padding: 0 10px;
     }
 
-    #courses {
+    .course-gid {
         display: grid;
         grid-template-columns: 1fr; /* Stack the course items */
         gap: 16px; /* Space between grid items */
