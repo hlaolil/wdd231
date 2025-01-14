@@ -111,9 +111,9 @@ function renderCourses(filteredCourses) {
     const courseCard = document.createElement('div');
     courseCard.classList.add('course-card', course.completed ? 'completed' : 'incomplete');
 
-    // Populate the card with course details
     courseCard.innerHTML = `
-        <p>${course.subject} ${course.number}</p>
+      <p><strong>${course.subject} ${course.number}</strong></p>
+      
     `;
 
     totalCredits += course.credits; // Accumulate total credits
@@ -123,20 +123,20 @@ function renderCourses(filteredCourses) {
 
   // Update total credits dynamically
   const creditDiv = document.getElementById('total-credits');
-  creditDiv.textContent = `Total Credits: ${totalCredits}`;
+  creditDiv.textContent = totalCredits;
 }
 
-// Handle button clicks for filtering courses
-document.querySelectorAll('#course-filter-buttons button').forEach(button => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    const filter = event.target.dataset.filter;
-    document.querySelectorAll('#course-filter-buttons button').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+// Button event listeners to filter courses
+document.getElementById('all-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('all'));
+});
 
-    const filteredCourses = filterCourses(filter);
-    renderCourses(filteredCourses);
-  });
+document.getElementById('wdd-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('wdd'));
+});
+
+document.getElementById('cse-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('cse'));
 });
 
 // Initial render for all courses
