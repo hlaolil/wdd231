@@ -218,6 +218,7 @@ main {
     .header-branding {
         flex-direction: column;
         align-items: center;
+        padding: 10px; /* Add padding to avoid tight spacing */
     }
 
     /* Profile Image */
@@ -226,11 +227,13 @@ main {
         height: 80px;
     }
 
-    /* Main Content */
+    /* Main Content - Content Area */
     .content-area {
         padding: 10px;
         grid-template-columns: 1fr; /* Stack content vertically on small screens */
         grid-template-rows: auto; /* Adjust row height automatically */
+        gap: 15px; /* Add gap between content items */
+        margin: 0; /* Ensure no extra margin */
     }
 
     /* Section Cards */
@@ -238,6 +241,7 @@ main {
         margin-bottom: 15px;
         padding: 10px;
         width: 100%; /* Make cards full width on small screens */
+        box-sizing: border-box; /* Ensure padding is included in width */
     }
 
     /* Footer Adjustments */
@@ -249,5 +253,56 @@ main {
     #symbol-date-name {
         font-size: 14px;
     }
+
+    /* About Section */
+    .about {
+        display: flex;
+        flex-direction: column; /* Stack the content vertically */
+        gap: 10px;
+        text-align: center; /* Align content to the center */
+    }
+
+    .about img {
+        width: 100%; /* Ensure image scales to the screen width */
+        max-width: 150px; /* Prevent large images */
+        height: auto;
+        border-radius: 50%;
+        margin: 0 auto; /* Center the image */
+    }
+
+    .about ul {
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    /* Lesotho Section */
+    .lesotho {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .lesotho img, .lesotho p {
+        display: block;
+        width: 100%;
+        text-align: justify;
+    }
+
+    #courses {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack the course items */
+        gap: 16px; /* Space between grid items */
+        padding: 16px;
+    }
+
+    .course-grid-item {
+        background-color: #f0f0f0;
+        padding: 16px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
 }
+
 
