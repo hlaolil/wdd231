@@ -88,3 +88,14 @@ const courses = [
         completed: false
     }
 ]
+courses.forEach(course => {
+    const courseCard = document.createElement('div'); // Create a child div for each course
+    courseCard.className = 'course-grid-item'; // Add styling
+
+    // Populate the card with course details
+    courseCard.innerHTML = `
+        <p>${course.subject} ${course.number}</p>
+    `;
+
+    coursesDiv.appendChild(courseCard); // Append it to the container
+});
