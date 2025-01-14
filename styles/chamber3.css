@@ -26,9 +26,3 @@
     .navigation a {
         color: #ffffff; /* Ensure visibility on dark background */
     }
-    .employee-profiles {
-        display: flex;
-        flex-direction: column;
-    }
-    
-}
