@@ -104,17 +104,13 @@ main {
     justify-content: center;
 }
 
-.about {
+.work {
     margin: 10px;
     display: flex;
     gap: 20px;
     text-align: left;
 }
 
-.about img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
 }
 
 .about ul {
