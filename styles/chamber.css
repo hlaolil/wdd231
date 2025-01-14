@@ -158,6 +158,23 @@ main {
     border: 1px solid #ccc;
     border-radius: 8px;
   }
+    /* Hamburger Icon Styling */
+.ham-button {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute; /* Position for better control */
+    top: 25px; /* Adjust as needed */
+    right: 15px; /* Adjust as needed */
+}
+
+.ham-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
     
 
 /* Mobile Styles */
