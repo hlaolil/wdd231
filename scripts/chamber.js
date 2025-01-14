@@ -88,9 +88,21 @@ const courses = [
         completed: false
     }
 ]
-courses.forEach(course => {
-    const courseCard = document.createElement('div'); // Create a child div for each course
-    courseCard.className = 'course-grid-item'; // Add styling
+function renderCourses(filteredCourses) {
+    // Clear previous content
+    coursesDiv.innerHTML = '';
+
+    // Render each course
+    filteredCourses.forEach(course => {
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-grid-item'; // General style for the card
+
+        // Apply different styles if the course is completed
+        if (course.completed) {
+            courseCard.classList.add('completed');
+        } else {
+            courseCard.classList.add('incomplete');
+        }
 
     // Populate the card with course details
     courseCard.innerHTML = `
