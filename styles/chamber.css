@@ -77,7 +77,8 @@ nav ul li a:hover {
     padding: 20px;
 }
 .card:nth-child(3) {
-  grid-column: span 2; /* Make the 3rd section span two columns */
+      grid-column: span 2; /* Make the 3rd section span two columns */
+}
 .card {
     margin: 20px;
     border: 1px solid #cadada;
