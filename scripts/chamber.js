@@ -176,6 +176,11 @@ window.addEventListener('load', function() {
     const currentLocation = window.location.pathname.replace(/\/$/, ''); // Get current path, remove trailing slash
     const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
 
+    // Treat root path `/` as `/index.html` for comparison
+    if (currentPath === '') {
+        currentPath = '/index.html';
+    }
+    
     navLinks.forEach(link => {
         const linkPath = new URL(link.href).pathname.replace(/\/$/, ''); // Get path of the link, remove trailing slash
 
