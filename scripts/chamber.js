@@ -173,13 +173,18 @@ hamButton.addEventListener('click', () => {
 });
 
 window.addEventListener('load', function() {
-    const currentLocation = window.location.pathname; // Get current page path
+    const currentLocation = window.location.pathname.replace(/\/$/, ''); // Get current path, remove trailing slash
     const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
 
     navLinks.forEach(link => {
-        if (link.href.includes(currentLocation)) {
+        const linkPath = new URL(link.href).pathname.replace(/\/$/, ''); // Get path of the link, remove trailing slash
+
+        if (linkPath === currentLocation) {
             link.classList.add('active'); // Add active class to the current page link
+        } else {
+            link.classList.remove('active'); // Ensure others don't have it
         }
     });
 });
+
 
