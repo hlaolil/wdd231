@@ -161,3 +161,27 @@ footer {
     width: 24px;
     height: 24px;
 }
+
+/* Define the common grid layout for both .home and .directory sections */
+.home, .directory {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Space between grid items */
+    grid-template-rows: 1fr; /* Only one row */
+}
+
+/* Style the individual grid items within .home and .directory */
+.home-item, .directory-item {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    border: 1px solid #ccc; /* Border around items */
+    text-align: center; /* Center text */
+    font-size: 16px;
+}
+
+/* Optional: Styling for responsiveness, adjust for smaller screens */
+@media (max-width: 768px) {
+    .home, .directory {
+        grid-template-columns: 1fr; /* Stack items in 1 column for smaller screens */
+    }
+}

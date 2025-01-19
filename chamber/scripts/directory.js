@@ -28,6 +28,50 @@ hamButton.addEventListener('click', () => {
     }
 });
 
+// Example data (can be replaced by API call, JSON file, etc.)
+const directoryData = [
+    {
+        name: "Business 1",
+        description: "Description of Business 1",
+        website: "https://example.com/1"
+    },
+    {
+        name: "Business 2",
+        description: "Description of Business 2",
+        website: "https://example.com/2"
+    },
+    {
+        name: "Business 3",
+        description: "Description of Business 3",
+        website: "https://example.com/3"
+    }
+];
+
+// Function to populate the directory dynamically
+function populateDirectory() {
+    const directorySection = document.querySelector('.directory'); // Select the section
+
+    directoryData.forEach(business => {
+        // Create a new div for each business entry
+        const businessDiv = document.createElement('div');
+        businessDiv.classList.add('business-entry'); // Add class for styling
+
+        // Populate the businessDiv with data
+        businessDiv.innerHTML = `
+            <h3>${business.name}</h3>
+            <p>${business.description}</p>
+            <a href="${business.website}" target="_blank">Visit Website</a>
+        `;
+
+        // Append the new business div to the section
+        directorySection.appendChild(businessDiv);
+    });
+}
+
+// Call the function when the page has loaded
+document.addEventListener('DOMContentLoaded', populateDirectory);
+
+
 const year = document.querySelector("#currentyear");
 const lastModified = document.querySelector("#lastModified");
 
