@@ -144,5 +144,3 @@ year.textContent = date.getFullYear();
 let lastMod = document.lastModified;
 lastModified.textContent = `Last Modified: ${lastMod}`;
 
-document.querySelector('.current-weather').innerHTML = "<p>Loading weather...</p>";
-
