@@ -204,4 +204,5 @@ footer {
     padding: 1rem;               /* Add spacing inside each column */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for clarity */
     text-align: center;          /* Centers text inside each column */
+    margin: 20px;
 }
