@@ -34,7 +34,7 @@ const directoryData = [
         address: "123 Tech Street, Silicon Valley, CA",
         phone: "(123) 456-7890",
         website: "https://techsolutions.com",
-        image: "tech-solutions-logo.png", // Image or icon file
+        image: "tech-solutions-logo.jpg", // Image or icon file
         membershipLevel: 3, // Gold membership
         otherInfo: "Leading tech company specializing in cloud services."
     },
