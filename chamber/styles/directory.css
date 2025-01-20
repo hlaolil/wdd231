@@ -126,10 +126,10 @@ nav {
 
 .hero h1 {
     position: absolute;
-    top: 10%;
+    top: 0%;
     left: 45%;
     transform: translate(-50%, -50%);
-    color: var(--accent1-color);
+    color: white;
     font-size: 2.0em;
     font-family: var(--heading-font);
     background-color: rgba(12, 12, 12, 0.6);
