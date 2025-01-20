@@ -1,13 +1,12 @@
 /* Header */
 header {
     padding: 20px;
-    background-color: var(--accent1-color);
     margin: 1rem auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
-    border-bottom: 1px solid #ccc;
+    background-color: #6eaacc;
 }
 
 /* Logo */
@@ -24,27 +23,30 @@ header img {
 
 /* Navigation */
 nav {
-    background-color: var(--nav-background-color);
-    text-align: right;
+    background-color: grey;
+    
+    
 }
 
 .navigation {
     display: flex;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    
+    
 }
 
 .navigation li {
-    flex: 1; /* Removed extra semicolon */
+    flex: 1; 
+    
 }
 
 .navigation a {
     display: block;
-    color: var(--nav-link-color);
+    color: white;
     padding: 20px;
     transition: font-weight 0.3s, background-color 0.3s;
     text-decoration: none;
+    
 }
 
 .navigation a:hover,
@@ -101,10 +103,6 @@ nav {
     .navigation a {
         color: #ffffff; /* Ensure visibility on dark background */
     }
-    .employee-profiles {
-        display: flex;
-        flex-direction: column;
-    }
     
 }
 
@@ -139,7 +137,7 @@ nav {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: #6eaacc;
     padding: 20px 0;
     text-align: center;
 }
@@ -153,9 +151,6 @@ footer {
     padding: 0 20px;
 }
 
-.sociallinks a {
-    margin-left: 10px;
-}
 
 .sociallinks img {
     width: 24px;
@@ -205,4 +200,7 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for clarity */
     text-align: center;          /* Centers text inside each column */
     margin: 20px;
+}
+h2 {
+    background-color: #6eaacc;
 }
