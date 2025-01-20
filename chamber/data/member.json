@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Tech Solutions Ltd.",
+        "address": "123 Tech Street, Silicon Valley, CA",
+        "phone": "(123) 456-7890",
+        "website": "https://techsolutions.com",
+        "image": "tech-solutions-logo.jpg",
+        "membershipLevel": 3,
+        "otherInfo": "Leading tech company specializing in cloud services."
+    },
+    {
+        "name": "Global Ventures Inc.",
+        "address": "456 Business Blvd, London, UK",
+        "phone": "(234) 567-8901",
+        "website": "https://globalventures.com",
+        "image": "global-ventures-logo.png",
+        "membershipLevel": 2,
+        "otherInfo": "Expanding businesses across Europe and Asia."
+    },
+    {
+        "name": "Eco Innovations",
+        "address": "789 Green Rd, Johannesburg, South Africa",
+        "phone": "(345) 678-9012",
+        "website": "https://ecoinnovations.com",
+        "image": "eco-innovations-logo.png",
+        "membershipLevel": 1,
+        "otherInfo": "Sustainable solutions for the future."
+    },
+    {
+        "name": "Alpha Manufacturing",
+        "address": "321 Industry Park, Tokyo, Japan",
+        "phone": "(456) 789-0123",
+        "website": "https://alphamanufacturing.com",
+        "image": "alpha-manufacturing-logo.png",
+        "membershipLevel": 3,
+        "otherInfo": "Innovating production processes for global industries."
+    },
+    {
+        "name": "Creative Designs Studio",
+        "address": "654 Art Lane, Paris, France",
+        "phone": "(567) 890-1234",
+        "website": "https://creativedesigns.com",
+        "image": "creative-designs-logo.png",
+        "membershipLevel": 2,
+        "otherInfo": "Designing memorable brands and experiences."
+    },
+    {
+        "name": "Smart Logistics Co.",
+        "address": "987 Supply Rd, Sydney, Australia",
+        "phone": "(678) 901-2345",
+        "website": "https://smartlogistics.com",
+        "image": "smart-logistics-logo.png",
+        "membershipLevel": 1,
+        "otherInfo": "Efficient supply chain solutions for modern businesses."
+    },
+    {
+        "name": "FinTech Innovations",
+        "address": "111 Finance St, New York, USA",
+        "phone": "(789) 012-3456",
+        "website": "https://fintechinnovations.com",
+        "image": "fintech-innovations-logo.png",
+        "membershipLevel": 3,
+        "otherInfo": "Transforming the future of financial services with cutting-edge tech."
+    }
+]
