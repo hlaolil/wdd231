@@ -204,3 +204,10 @@ footer {
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     }
+.home div {
+    background-color: #fff;      /* Set background for each column */
+    border: 1px solid #ccc;      /* Add a border to define each division */
+    padding: 1rem;               /* Add spacing inside each column */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for clarity */
+    text-align: center;          /* Centers text inside each column */
+}
