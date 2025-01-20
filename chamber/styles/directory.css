@@ -197,13 +197,7 @@ footer {
     margin-right: 20px;
     vertical-align: middle;
 }
-    
-.home {
-    background-color: rgba(244, 226, 216, 0.8); /* Lighter, transparent sandy beige */
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-    }
+
 .home div {
     background-color: #fff;      /* Set background for each column */
     border: 1px solid #ccc;      /* Add a border to define each division */
