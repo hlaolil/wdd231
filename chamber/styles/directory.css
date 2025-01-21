@@ -205,7 +205,7 @@ h2 {
     background-color: #6eaacc;
     border-radius: 10px;
 }
-.events, .weather, .forecast {
+.events, .current-weather, .weather-forecast {
     background-color: rgba(244, 226, 216, 0.8);
     padding: 1.5rem;
     border-radius: 10px;
