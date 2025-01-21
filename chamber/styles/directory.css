@@ -7,6 +7,7 @@ header {
     align-items: center;
     max-width: 100%;
     background-color: #6eaacc;
+    border-radius: 10px;
 }
 
 /* Logo */
@@ -184,6 +185,7 @@ footer {
     border: 1px solid #ccc;
     padding: 20px;
     margin: 10px 0;
+    border-radius: 10px;
 }
 
 .business-logo {
@@ -191,6 +193,7 @@ footer {
     height: 50px;
     margin-right: 20px;
     vertical-align: middle;
+    border-radius: 10px;
 }
 
 .home div {
@@ -200,6 +203,7 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for clarity */
     text-align: center;          /* Centers text inside each column */
     margin: 20px;
+    border-radius: 10px;
 }
 h2 {
     background-color: #6eaacc;
