@@ -74,6 +74,16 @@ function getMembershipLevel(level) {
     }
 }
 
+// Toggle between grid and list view
+function toggleView() {
+    const directorySection = document.querySelector('.directory');
+    directorySection.classList.toggle('grid-view');
+    directorySection.classList.toggle('list-view');
+}
+
+// Add event listener to the toggle button
+document.getElementById('viewToggle').addEventListener('click', toggleView);
+
 // Call the function when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', populateDirectoryFromJSON);
 
