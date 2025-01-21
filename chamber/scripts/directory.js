@@ -90,3 +90,29 @@ year.textContent = date.getFullYear();
 let lastMod = document.lastModified;
 lastModified.textContent = `Last Modified: ${lastMod}`;
 
+// Add content to the "Events" section
+const eventsDiv = document.querySelector('.events');
+const eventsContent = document.createElement('p');
+eventsContent.textContent = "Upcoming events: Tech Meetup, Workshop on Web Development, and more!";
+eventsDiv.appendChild(eventsContent);
+
+// Add content to the "Current Weather" section
+const currentWeatherDiv = document.querySelector('.current-weather');
+const weatherContent = document.createElement('p');
+weatherContent.textContent = "Sunny, 25°C (77°F)";
+currentWeatherDiv.appendChild(weatherContent);
+
+// Add content to the "Weather Forecast" section
+const weatherForecastDiv = document.querySelector('.weather-forecast');
+const forecastContent = document.createElement('ul');
+
+const forecastData = ["Monday: Cloudy, 22°C", "Tuesday: Rainy, 18°C", "Wednesday: Sunny, 24°C"];
+forecastData.forEach(day => {
+    const listItem = document.createElement('li');
+    listItem.textContent = day;
+    forecastContent.appendChild(listItem);
+});
+
+weatherForecastDiv.appendChild(forecastContent);
+
+
