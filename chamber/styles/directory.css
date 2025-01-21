@@ -203,6 +203,7 @@ footer {
 }
 h2 {
     background-color: #6eaacc;
+    border-radius: 10px;
 }
 .events, .weather, .forecast {
     background-color: rgba(244, 226, 216, 0.8);
