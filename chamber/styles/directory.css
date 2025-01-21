@@ -166,6 +166,11 @@ footer {
     grid-template-rows: 1fr; /* Only one row */
 }
 
+.directory.list-view {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 /* Style the individual grid items within .home and .directory */
 .home-item, .directory-item {
     background-color: #f4f4f4; /* Light gray background */
