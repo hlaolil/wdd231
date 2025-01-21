@@ -204,3 +204,9 @@ footer {
 h2 {
     background-color: #6eaacc;
 }
+.events, .weather, .forecast {
+    background-color: rgba(244, 226, 216, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
