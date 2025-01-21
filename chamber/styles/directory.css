@@ -159,7 +159,13 @@ footer {
 }
 
 /* Define the common grid layout for both .home and .directory sections */
-.home, .directory {
+.home {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Space between grid items */
+    grid-template-rows: 1fr; /* Only one row */
+}
+.directory.grid-view {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 20px; /* Space between grid items */
