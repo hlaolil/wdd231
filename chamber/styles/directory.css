@@ -13,7 +13,7 @@ header {
 }
 
 /* Navigation */
-nav {
+#navigation {
     background-color: grey;
     
     
@@ -222,4 +222,9 @@ h2 {
 nav ul li a.active {
     color: #4d88bb; /* Change to any color you prefer for active link */
     background-color: #e0e0e0; /* Optional: background highlight for active link */
+}
+header img {
+    aspect-ratio: auto; /* Match natural aspect ratio */
+    max-width: 50%; /* Prevent overflow */
+    height: auto;
 }
