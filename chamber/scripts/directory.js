@@ -130,8 +130,8 @@ window.addEventListener('load', function() {
     const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
 
     // Treat root path `/` as `/index.html` for comparison
-    if (currentPath === '') {
-        currentPath = '/index.html';
+    if (currentLocation === '') {
+        currentLocation = '/index.html';
     }
     
     navLinks.forEach(link => {
