@@ -13,16 +13,10 @@ header {
 }
 
 /* Navigation */
-#navigation {
-    background-color: grey;
-    
-    
-}
-
 .navigation {
     display: flex;
     list-style: none;
-    
+    background-color: grey;
     
 }
 
@@ -225,6 +219,6 @@ nav ul li a.active {
 }
 header img {
     aspect-ratio: auto; /* Match natural aspect ratio */
-    max-width: 50%; /* Prevent overflow */
+    max-width: 10%; /* Prevent overflow */
     height: auto;
 }
