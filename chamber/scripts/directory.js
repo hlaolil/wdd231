@@ -100,11 +100,33 @@ year.textContent = date.getFullYear();
 let lastMod = document.lastModified;
 lastModified.textContent = `Last Modified: ${lastMod}`;
 
-// Add content to the "Events" section
 const eventsDiv = document.querySelector('.events');
-const eventsContent = document.createElement('p');
-eventsContent.textContent = "Upcoming events: Tech Meetup, Workshop on Web Development, and more!";
-eventsDiv.appendChild(eventsContent);
+
+if (eventsDiv) { // Ensure the container exists
+  // Create an unordered list
+  const eventsList = document.createElement('ul');
+  eventsList.classList.add('events-list'); // Optional: Add a class for styling
+
+  // Define the events
+  const events = [
+    "Tech Meetup",
+    "Workshop on Web Development",
+    "Hackathon 2025",
+    "Networking Session"
+  ];
+
+  // Populate the list with events
+  events.forEach(event => {
+    const listItem = document.createElement('li');
+    listItem.textContent = event;
+    eventsList.appendChild(listItem);
+  });
+
+  // Append the list to the events div
+  eventsDiv.appendChild(eventsList);
+} else {
+  console.error("The '.events' div was not found.");
+}
 
 const API_KEY = '3ba94e27626600d2c4a58e9b5d157562'; // Replace with your API key
 const LOCATION = 'Butha-Buthe, LS'; // Chamber location

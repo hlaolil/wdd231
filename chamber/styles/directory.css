@@ -306,3 +306,25 @@ header img {
 .spotlight-card a:hover {
     text-decoration: underline;
 }
+
+/* Style the list */
+.events-list {
+    list-style-type: disc; /* Standard bullet points */
+    padding-left: 20px; /* Indent from the left */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Style the list items */
+  .events-list li {
+    font-size: 16px; /* Comfortable font size */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Dark gray text */
+    margin-bottom: 8px; /* Space between items */
+  }
+  
+  /* Add hover effect to the list items */
+  .events-list li:hover {
+    color: #007bff; /* Blue text on hover */
+    cursor: pointer; /* Indicate interactivity */
+    text-decoration: underline; /* Underline for emphasis */
+  }
