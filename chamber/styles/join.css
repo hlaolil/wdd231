@@ -1,0 +1,156 @@
+/* Focus Styles */
+a:focus,
+button:focus {
+    outline: 2px solid #0073e6;
+    outline-offset: 3px;
+}
+
+/* Membership Cards (for animation) */
+.membership-card {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideUp 1s ease-in-out;
+}
+
+.membership-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Form Container */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form Labels */
+form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Form Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 4px rgba(0, 115, 230, 0.5);
+}
+
+/* Placeholder Text */
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Textarea */
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Membership Level Section */
+form .membership-level {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form .membership-level label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Radio Buttons for Membership Levels */
+form input[type="radio"] {
+    accent-color: #0073e6;
+    transform: scale(1.2);
+}
+
+/* Submit Button */
+form input[type="submit"] {
+    padding: 12px 20px;
+    background-color: #0073e6;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #005bb5;
+}
+
+form input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Timestamp (Hidden Field) */
+form input[type="hidden"] {
+    display: none;
+}
+
+/* Error Messages */
+form .error {
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+}
