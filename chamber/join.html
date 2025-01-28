@@ -41,6 +41,106 @@
                 <img src="images/hero1.webp" alt="Chamber hero">
             </picture>
         </section>
+        <form method="get" action="thankyou.html">
+            <!-- Applicant's First Name -->
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required title="Enter your first name" autocomplete="given-name">
+
+            <!-- Applicant's Last Name -->
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required title="Enter your last name" autocomplete="family-name">
+
+            <!-- Applicant's Organizational Title -->
+            <label for="organization-title">Organizational Title</label>
+            <input type="text" id="organization-title" name="organization-title" 
+                   title="Enter your title (letters, hyphens, spaces, at least 7 characters)"
+                   pattern="^[A-Za-z-\s]{7,}$" autocomplete="organization-title">
+
+            <!-- Email Address -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@email.com">
+
+            <!-- Mobile Phone Number -->
+            <label for="phone">Mobile Phone</label>
+            <input type="tel" id="phone" name="phone" required title="Enter your mobile phone number" autocomplete="tel">
+
+            <!-- Business/Organization Name -->
+            <label for="organization">Business/Organization Name</label>
+            <input type="text" id="organization" name="organization" required title="Enter your business name" autocomplete="organization">
+
+            <!-- Membership Level -->
+            <label for="membership">Membership Level</label>
+            <select id="membership" name="membership" required>
+                <option value="np">NP Membership (Non-Profit)</option>
+                <option value="bronze">Bronze Membership</option>
+                <option value="silver">Silver Membership</option>
+                <option value="gold">Gold Membership</option>
+            </select>
+
+            <!-- Business Description -->
+            <label for="description">Business/Organization Description</label>
+            <textarea id="description" name="description" title="Enter a brief description of your business"></textarea>
+
+            <!-- Timestamp (Hidden) -->
+            <input type="hidden" id="timestamp" name="timestamp">
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Membership Cards -->
+        <section class="membership-cards">
+            <div class="card" data-membership="np">
+                <h3>NP Membership</h3>
+                <p>No fee for non-profit organizations.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="card" data-membership="bronze">
+                <h3>Bronze Membership</h3>
+                <p>Affordable access with basic benefits.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="card" data-membership="silver">
+                <h3>Silver Membership</h3>
+                <p>Enjoy additional perks and event discounts.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="card" data-membership="gold">
+                <h3>Gold Membership</h3>
+                <p>Premium benefits with maximum exposure.</p>
+                <button>Learn More</button>
+            </div>
+        </section>
+
+        <!-- Modals for Membership Levels -->
+        <div class="modal" id="np-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>NP Membership Benefits</h3>
+                <p>No fee for non-profit organizations. Enjoy access to free networking events and training opportunities.</p>
+            </div>
+        </div>
+        <div class="modal" id="bronze-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Bronze Membership Benefits</h3>
+                <p>Basic benefits include participation in chamber activities and basic advertisement options.</p>
+            </div>
+        </div>
+        <div class="modal" id="silver-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Silver Membership Benefits</h3>
+                <p>Additional perks include discounted event rates and featured listings in our directory.</p>
+            </div>
+        </div>
+        <div class="modal" id="gold-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Gold Membership Benefits</h3>
+                <p>Enjoy premium benefits like event sponsorships, homepage spotlight, and exclusive networking opportunities.</p>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-content">
