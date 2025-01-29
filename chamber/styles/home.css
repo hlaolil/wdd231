@@ -109,7 +109,7 @@ header {
 .hero h1 {
     position: absolute;
     top: 0%;
-    left: 45%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 2.0em;
@@ -226,7 +226,7 @@ header img {
 .join-button {
     position: absolute;
     top: 60%;
-    left: 40%;
+    left: 45%;
     margin-top: 1em;
     padding: 0.75em 1.5em;
     background-color: #6eaacc; /* Chamber's theme color */
