@@ -57,6 +57,11 @@ header {
     border-radius: 3px;
 }
 
+/* Active link styling */
+nav ul li a.active {
+    color: #4d88bb; /* Change to any color you prefer for active link */
+    background-color: #e0e0e0; /* Optional: background highlight for active link */
+}
 
 
 /* Mobile Styles */
