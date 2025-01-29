@@ -29,11 +29,6 @@ hamButton.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
 const year = document.querySelector("#currentyear");
 const lastModified = document.querySelector("#lastModified");
 

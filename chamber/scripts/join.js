@@ -1,22 +1,49 @@
 // Set the current timestamp
 document.getElementById('timestamp').value = new Date().toISOString();
 
-// Modal functionality (simplified example)
-const modals = document.querySelectorAll('.modal');
-const buttons = document.querySelectorAll('.card button');
-const closeButtons = document.querySelectorAll('.close');
-
-buttons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-        modals[index].style.display = 'block';
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    const modals = document.querySelectorAll(".modal");
+    
+    modals.forEach((modal) => {
+        modal.style.display = "none"; // Hide any accidentally shown modals
+    });
 });
 
-closeButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-        btn.closest('.modal').style.display = 'none';
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all membership cards and modals
+    const cards = document.querySelectorAll(".card");
+    const modals = document.querySelectorAll(".modal");
+    const closeButtons = document.querySelectorAll(".close");
+
+    
+    // Function to open the correct modal
+    cards.forEach((card) => {
+        card.addEventListener("click", function () {
+            const membershipType = card.getAttribute("data-membership");
+            const modal = document.getElementById(`${membershipType}-modal`);
+            if (modal) {
+                modal.style.display = "block";
+            }
         });
+    });
+
+    // Function to close the modal
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            this.parentElement.parentElement.style.display = "none";
+        });
+    });
+
+    // Close modal if clicked outside the content
+    window.addEventListener("click", function (event) {
+        modals.forEach((modal) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
 });
+
 
 const hamButton = document.querySelector('.ham-button');
 const navigation = document.querySelector('.navigation');
@@ -68,7 +95,6 @@ window.addEventListener('load', function() {
     });
 });
 
-
 const year = document.querySelector("#currentyear");
 const lastModified = document.querySelector("#lastModified");
 
@@ -80,9 +106,4 @@ year.textContent = date.getFullYear();
 let lastMod = document.lastModified;
 lastModified.textContent = `Last Modified: ${lastMod}`;
 
-const eventsDiv = document.querySelector('.events');
 
-if (eventsDiv) { // Ensure the container exists
-  // Create an unordered list
-  const eventsList = document.createElement('ul');
-  eventsList.classList.add('events-list'); // Optional: Add a class for styling
