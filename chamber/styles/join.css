@@ -186,6 +186,7 @@ button:focus {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+     background-color:#d6dfe7
 }
 
 .card:hover {
