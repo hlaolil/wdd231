@@ -45,33 +45,33 @@
         </section>
         <form method="get" action="thankyou.html">
             <!-- Applicant's First Name -->
-            <label for="first-name">First Name</label>
+            <label for="first-name" style="display: inline-block;">First Name <span style="color: red;">*</span></label>
             <input type="text" id="first-name" name="first-name" required title="Enter your first name" autocomplete="given-name">
-
+        
             <!-- Applicant's Last Name -->
-            <label for="last-name">Last Name</label>
+            <label for="last-name" style="display: inline-block;">Last Name <span style="color: red;">*</span></label>
             <input type="text" id="last-name" name="last-name" required title="Enter your last name" autocomplete="family-name">
-
+        
             <!-- Applicant's Organizational Title -->
-            <label for="organization-title">Organizational Title</label>
+            <label for="organization-title" style="display: inline-block;">Organizational Title</label>
             <input type="text" id="organization-title" name="organization-title" 
                    title="Enter your title (letters, hyphens, spaces, at least 7 characters)"
                    pattern="^[A-Za-z-\s]{7,}$" autocomplete="organization-title">
-
+        
             <!-- Email Address -->
-            <label for="email">Email</label>
+            <label for="email" style="display: inline-block;">Email <span style="color: red;">*</span></label>
             <input type="email" id="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@email.com">
-
+        
             <!-- Mobile Phone Number -->
-            <label for="phone">Mobile Phone</label>
+            <label for="phone" style="display: inline-block;">Mobile Phone <span style="color: red;">*</span></label>
             <input type="tel" id="phone" name="phone" required title="Enter your mobile phone number" autocomplete="tel">
-
+        
             <!-- Business/Organization Name -->
-            <label for="organization">Business/Organization Name</label>
+            <label for="organization" style="display: inline-block;">Business/Organization Name <span style="color: red;">*</span></label>
             <input type="text" id="organization" name="organization" required title="Enter your business name" autocomplete="organization">
-
+        
             <!-- Membership Level -->
-            <label for="membership">Membership Level</label>
+            <label for="membership" style="display: inline-block;">Membership Level <span style="color: red;">*</span></label>
             <select id="membership" name="membership" required>
                 <option value="">Select an option</option>
                 <option value="non-profit">NP Membership (Non-Profit)</option>
@@ -79,14 +79,14 @@
                 <option value="silver">Silver Membership</option>
                 <option value="gold">Gold Membership</option>
             </select>
-
+        
             <!-- Business Description -->
-            <label for="organization-description">Business/Organization Description</label>
+            <label for="organization-description" style="display: inline-block;">Business/Organization Description</label>
             <textarea id="organization-description" name="organization-description" title="Enter a brief description of your business"></textarea>
-
+        
             <!-- Timestamp (Hidden) -->
             <input type="hidden" id="timestamp" name="timestamp">
-
+        
             <!-- Submit Button -->
             <button type="submit">Submit</button>
         </form>
