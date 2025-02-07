@@ -9,7 +9,7 @@ localStorage.setItem('lastVisitDate', currentVisitDate);
 
 // Display different messages based on the time since the last visit
 document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.querySelector('.sidebar'); // Assuming sidebar exists on the page
+    const lastVisitMessage = document.getElementById('last-visit-message');
 
     let message = '';
 
@@ -29,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    sidebar.innerHTML = `<p>${message}</p>`;
+    lastVisitMessage.innerHTML = message;
 });
