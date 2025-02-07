@@ -364,3 +364,10 @@ form .error {
     color: red;
     font-size: 0.9rem;
 }
+.form-label {
+    display: inline-block;
+}
+
+.required {
+    color: maroon;
+}
