@@ -1,0 +1,64 @@
+/* Global styles for grid container */
+.grid-container {
+    display: grid;
+    gap: 20px;
+}
+
+/* Default for small screens */
+@media (max-width: 640px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: 
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7"
+            "item8";
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Medium screens (641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "item1 item2"
+            "item3 item4"
+            "item5 item6"
+            "item7 item8";
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "item1 item2 item3 item4"
+            "item5 item6 item7 item8";
+    }
+
+    .card {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
