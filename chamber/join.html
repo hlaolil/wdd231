@@ -44,52 +44,53 @@
             <h1>Fill Form to Join Chamber</h1>
         </section>
         <form method="get" action="thankyou.html">
-            <!-- Applicant's First Name -->
-            <label for="first-name" style="display: inline-block;">First Name <span style="color: red;">*</span></label>
-            <input type="text" id="first-name" name="first-name" required title="Enter your first name" autocomplete="given-name">
-        
-            <!-- Applicant's Last Name -->
-            <label for="last-name" style="display: inline-block;">Last Name <span style="color: red;">*</span></label>
-            <input type="text" id="last-name" name="last-name" required title="Enter your last name" autocomplete="family-name">
-        
-            <!-- Applicant's Organizational Title -->
-            <label for="organization-title" style="display: inline-block;">Organizational Title</label>
-            <input type="text" id="organization-title" name="organization-title" 
-                   title="Enter your title (letters, hyphens, spaces, at least 7 characters)"
-                   pattern="^[A-Za-z-\s]{7,}$" autocomplete="organization-title">
-        
-            <!-- Email Address -->
-            <label for="email" style="display: inline-block;">Email <span style="color: red;">*</span></label>
-            <input type="email" id="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@email.com">
-        
-            <!-- Mobile Phone Number -->
-            <label for="phone" style="display: inline-block;">Mobile Phone <span style="color: red;">*</span></label>
-            <input type="tel" id="phone" name="phone" required title="Enter your mobile phone number" autocomplete="tel">
-        
-            <!-- Business/Organization Name -->
-            <label for="organization" style="display: inline-block;">Business/Organization Name <span style="color: red;">*</span></label>
-            <input type="text" id="organization" name="organization" required title="Enter your business name" autocomplete="organization">
-        
-            <!-- Membership Level -->
-            <label for="membership" style="display: inline-block;">Membership Level <span style="color: red;">*</span></label>
-            <select id="membership" name="membership" required>
-                <option value="">Select an option</option>
-                <option value="non-profit">NP Membership (Non-Profit)</option>
-                <option value="bronze">Bronze Membership</option>
-                <option value="silver">Silver Membership</option>
-                <option value="gold">Gold Membership</option>
-            </select>
-        
-            <!-- Business Description -->
-            <label for="organization-description" style="display: inline-block;">Business/Organization Description</label>
-            <textarea id="organization-description" name="organization-description" title="Enter a brief description of your business"></textarea>
-        
-            <!-- Timestamp (Hidden) -->
-            <input type="hidden" id="timestamp" name="timestamp">
-        
-            <!-- Submit Button -->
-            <button type="submit">Submit</button>
-        </form>
+    <!-- Applicant's First Name -->
+    <label for="first-name" class="form-label">First Name <span class="required">*</span></label>
+    <input type="text" id="first-name" name="first-name" required title="Enter your first name" autocomplete="given-name" placeholder="John">
+
+    <!-- Applicant's Last Name -->
+    <label for="last-name" class="form-label">Last Name <span class="required">*</span></label>
+    <input type="text" id="last-name" name="last-name" required title="Enter your last name" autocomplete="family-name" placeholder="Doe">
+
+    <!-- Applicant's Organizational Title -->
+    <label for="organization-title" class="form-label">Organizational Title</label>
+    <input type="text" id="organization-title" name="organization-title"
+           title="Enter your title (letters, hyphens, spaces, at least 7 characters)"
+           pattern="^[A-Za-z-\s]{7,}$" autocomplete="organization-title" placeholder="Manager">
+
+    <!-- Email Address -->
+    <label for="email" class="form-label">Email <span class="required">*</span></label>
+    <input type="email" id="email" name="email" required title="Enter a valid email address" autocomplete="email" placeholder="example@email.com">
+
+    <!-- Mobile Phone Number -->
+    <label for="phone" class="form-label">Mobile Phone <span class="required">*</span></label>
+    <input type="tel" id="phone" name="phone" required title="Enter your mobile phone number" autocomplete="tel" placeholder="+1-234-567-890">
+
+    <!-- Business/Organization Name -->
+    <label for="organization" class="form-label">Business/Organization Name <span class="required">*</span></label>
+    <input type="text" id="organization" name="organization" required title="Enter your business name" autocomplete="organization" placeholder="Tech Corp">
+
+    <!-- Membership Level -->
+    <label for="membership" class="form-label">Membership Level <span class="required">*</span></label>
+    <select id="membership" name="membership" required>
+        <option value="">Select an option</option>
+        <option value="non-profit">NP Membership (Non-Profit)</option>
+        <option value="bronze">Bronze Membership</option>
+        <option value="silver">Silver Membership</option>
+        <option value="gold">Gold Membership</option>
+    </select>
+
+    <!-- Business Description -->
+    <label for="organization-description" class="form-label">Business/Organization Description</label>
+    <textarea id="organization-description" name="organization-description" title="Enter a brief description of your business" placeholder="Brief description of your business"></textarea>
+
+    <!-- Timestamp (Hidden) -->
+    <input type="hidden" id="timestamp" name="timestamp">
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+</form>
+
 
         <!-- Membership Cards -->
         <section class="membership-cards">
