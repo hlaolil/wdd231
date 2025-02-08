@@ -297,7 +297,7 @@ header img {
   }
   
   /* Style the list items */
-  .events-list li {
+.events-list li {
     font-size: 16px; /* Comfortable font size */
     line-height: 1.6; /* Improve readability */
     color: #333; /* Dark gray text */
@@ -310,3 +310,7 @@ header img {
     cursor: pointer; /* Indicate interactivity */
     text-decoration: underline; /* Underline for emphasis */
   }
+
+.spotlight a {
+    color: black;
+}
