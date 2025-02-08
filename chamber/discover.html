@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover - Chamber Directory</title>
-    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/discover.css">
     <script defer src="scripts/discover.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Properties for Facebook -->
+    <meta property="og:title" content="Chamber Directory - Letlotlo Hlaoli">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://hlaolil.github.io/wdd231/chamber/images/hero.webp">
+    <meta property="og:url" content="https://hlaolil.github.io/wdd231/chamber/directory.html">
 </head>
 <body>
     <header>
         <img src="images/logo.jpg" alt="LSH Group Chamber of Commerce Logo">
+        <!-- Hamburger Icon for mobile -->
         <div class="ham-button" role="button" aria-expanded="false" aria-controls="navigation">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -21,13 +29,18 @@
                 <li><a href="discover.html" class="active">Discover</a></li>
                 <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-            </ul>
+            </ul>    
         </nav>
     </header>
-
     <main>
-        <section class="discover-section">
+        <section class="hero">
+            <picture>
+                <source srcset="images/hero.webp" media="(min-width: 1200px)">
+                <img src="images/hero1.webp" alt="Chamber hero">
+            </picture>
             <h1>Discover Interesting Spots</h1>
+        </section>
+        <section class="discover-section">
             <div class="grid-container">
                 <!-- Example for one card, repeat for 8 items -->
                 <div class="card" style="grid-area: item1;">
