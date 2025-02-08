@@ -75,3 +75,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lastVisitMessage.innerHTML = message;
 });
+
+
+// Fetch the JSON file
+fetch('places.json')
+  .then(response => response.json())
+  .then(data => renderCards(data)) // Render cards once the data is fetched
+  .catch(error => console.error('Error loading the JSON file:', error));
+
+// Function to render cards
+function renderCards(data) {
+    const container = document.getElementById("grid-container"); // Ensure this matches your HTML id
+    
+    // Loop through the places data and create cards
+    data.places.forEach((place, index) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.style.gridArea = `item${index + 1}`;
+
+        // Add the content inside each card
+        card.innerHTML = `
+            <h2>${place.name}</h2>
+            <figure>
+                <img src="${place.image}" alt="${place.name}" width="300" height="200">
+            </figure>
+            <address>${place.address}</address>
+            <p>${place.description}</p>
+            <button>${place.buttonText}</button>
+        `;
+
+        // Append the card to the container
+        container.appendChild(card);
+    });
+}

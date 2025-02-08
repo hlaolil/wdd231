@@ -168,18 +168,6 @@ button:focus {
     outline-offset: 3px;
 }
 
-/* Style for the membership cards */
-.membership-cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-in-out forwards; /* Adding a fade-in and slight movement */
-    
-}
-
 .card {
     width: 200px;
     padding: 15px;
@@ -260,80 +248,10 @@ button:focus {
     cursor: pointer;
 }
 
-
-
-/* Global styles for grid container */
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr; /* Default 1 column for small screens */
-    gap: 20px;
+/* Section Styling */
+.discover-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
 }
 
-.grid-container {
-    display: grid;
-    gap: 20px;
-}
-
-.card {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Default for small screens */
-@media (max-width: 640px) {
-    .main-content {
-        grid-template-columns: 1fr; /* Stack the content */
-    }
-
-    .sidebar {
-        display: none; /* Hide sidebar on small screens */
-    }
-}
-
-/* Medium screens (641px to 1024px) */
-@media (min-width: 641px) and (max-width: 1024px) {
-    .main-content {
-        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
-    }
-
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-            "item1 item2"
-            "item3 item4"
-            "item5 item6"
-            "item7 item8";
-    }
-
-    .sidebar {
-        display: block; /* Show sidebar */
-        background-color: #f0f0f0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-}
-
-/* Large screens (1025px and above) */
-@media (min-width: 1025px) {
-    .main-content {
-        grid-template-columns: 3fr 1fr; /* Main content takes more space, sidebar smaller */
-    }
-
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 
-            "item1 item2 item3 item4"
-            "item5 item6 item7 item8";
-    }
-
-    .sidebar {
-        display: block; /* Show sidebar */
-        background-color: #f0f0f0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-}
