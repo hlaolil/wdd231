@@ -300,19 +300,19 @@ button:focus {
   .place-card address {
     font-style: normal;
     margin: 10px 15px;
-    color: #666;
+    color: #333232;
   }
   
   .place-card p {
     font-size: 1rem;
     margin: 10px 15px;
-    color: #333;
+    color: #252525;
   }
   
   .place-card button {
     margin: 15px;
     padding: 10px 20px;
-    background-color: grey;
+    background-color: rgb(73, 73, 73);
     color: #fff;
     border: none;
     border-radius: 5px;
