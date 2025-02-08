@@ -77,34 +77,70 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Fetch the JSON file
-fetch('places.json')
-  .then(response => response.json())
-  .then(data => renderCards(data)) // Render cards once the data is fetched
-  .catch(error => console.error('Error loading the JSON file:', error));
+// Function to fetch and populate the places directory
+async function populatePlacesDirectory() {
+    const placesContainer = document.querySelector('.grid-container'); // Select the grid container
 
-// Function to render cards
-function renderCards(data) {
-    const container = document.getElementById("grid-container"); // Ensure this matches your HTML id
-    
-    // Loop through the places data and create cards
-    data.places.forEach((place, index) => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.style.gridArea = `item${index + 1}`;
+    try {
+        // Fetch the JSON file
+        const response = await fetch('places.json');
+        if (!response.ok) throw new Error('Failed to fetch the JSON file');
 
-        // Add the content inside each card
-        card.innerHTML = `
-            <h2>${place.name}</h2>
-            <figure>
-                <img src="${place.image}" alt="${place.name}" width="300" height="200">
-            </figure>
-            <address>${place.address}</address>
-            <p>${place.description}</p>
-            <button>${place.buttonText}</button>
-        `;
+        // Parse the JSON data
+        const placesData = await response.json();
 
-        // Append the card to the container
-        container.appendChild(card);
-    });
+        // Process the data and create the HTML elements
+        placesData.places.forEach(place => {
+            const placeDiv = document.createElement('div');
+            placeDiv.classList.add('place-card'); // Updated class name for styling
+
+            placeDiv.innerHTML = `
+                <h2>${place.name}</h2>
+                <figure>
+                    <img src="${place.image}" alt="${place.name}" width="300" height="200" loading= "lazy">
+                </figure>
+                <address>${place.address}</address>
+                <button class="learn-more" data-name="${place.name}" data-description="${place.description}">Learn More</button>
+            `;
+
+            placesContainer.appendChild(placeDiv);
+        });
+
+        // Add event listeners to the "Learn More" buttons
+        document.querySelectorAll('.learn-more').forEach(button => {
+            button.addEventListener('click', function () {
+                const modal = document.getElementById('modal');
+                document.getElementById('modal-title').textContent = this.getAttribute('data-name');
+                document.getElementById('modal-description').textContent = this.getAttribute('data-description');
+                modal.style.display = 'flex';
+            });
+        });
+
+    } catch (error) {
+        console.error('Error loading the places directory:', error);
+    }
 }
+
+// Call the function to populate the directory
+populatePlacesDirectory();
+
+
+
+// Modal close functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('modal');
+    const closeModal = document.querySelector('.close');
+
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    // Ensure modal is hidden initially (extra safeguard)
+    modal.style.display = 'none';
+});
+

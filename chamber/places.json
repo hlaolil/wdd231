@@ -2,7 +2,7 @@
     "places": [
       {
         "name": "Maletsunyane Falls",
-        "image": "images/maletsunyane_falls.webp",
+        "image": "images/maletsunyane.webp",
         "address": "Near Semonkong, Lesotho",
         "description": "One of the highest waterfalls in Southern Africa, offering stunning views and adventure activities like abseiling.",
         "buttonText": "Learn More"
@@ -16,42 +16,42 @@
       },
       {
         "name": "Sehlabathebe National Park",
-        "image": "images/sehlabathebe_national_park.webp",
+        "image": "images/sehlabathebe.webp",
         "address": "Near the southeastern border of Lesotho",
         "description": "A UNESCO site known for its incredible biodiversity, stunning landscapes, and rare bird species.",
         "buttonText": "Learn More"
       },
       {
         "name": "Liphofung Cave",
-        "image": "images/liphofung_cave.webp",
+        "image": "images/liphofung.webp",
         "address": "Near Hlotse, Lesotho",
         "description": "A historical cave that houses ancient San rock art and artifacts, offering insight into early human life.",
         "buttonText": "Learn More"
       },
       {
         "name": "Oxbow Resort",
-        "image": "images/oxbow_resort.webp",
+        "image": "images/oxbow.webp",
         "address": "Oxbow, Lesotho",
         "description": "A peaceful resort surrounded by breathtaking mountains, perfect for relaxation, skiing, and hiking.",
         "buttonText": "Learn More"
       },
       {
         "name": "Katse Dam",
-        "image": "images/katse_dam.webp",
+        "image": "images/katse.webp",
         "address": "Near Butha-Buthe, Lesotho",
-        "description": "One of the largest dams in Africa, offering spectacular views and boat tours, part of the Lesotho Highlands Water Project.",
+        "description": "One of the largest dams in Africa, offering spectacular views and boat tours, part of the LHWP.",
         "buttonText": "Learn More"
       },
       {
-        "name": "Royal Palace of Teyateyaneng",
-        "image": "images/royal_palace_teyateyaneng.webp",
+        "name": "Teyateyaneng",
+        "image": "images/teyateyaneng.webp",
         "address": "Teyateyaneng, Lesotho",
         "description": "Historical palace of the Basotho kings, offering a glimpse into the rich cultural heritage of Lesotho.",
         "buttonText": "Learn More"
       },
       {
         "name": "Afri-Ski",
-        "image": "images/afri_ski.webp",
+        "image": "images/afriski.webp",
         "address": "Near the Maluti Mountains, Lesotho",
         "description": "The only ski resort in Southern Africa, perfect for snow activities and mountain adventure.",
         "buttonText": "Learn More"
