@@ -35,7 +35,7 @@ h1 {
 
 .navigation a {
     display: block;
-    color: white;
+    color: teal;
     padding: 20px;
     transition: font-weight 0.3s, background-color 0.3s;
     text-decoration: none;
@@ -44,7 +44,6 @@ h1 {
 .navigation a:hover,
 .navigation a:focus {
     font-weight: 700;
-    background-color: #FF4500; /* Red hover */
 }
 
 /* Hamburger Icon Styling */
