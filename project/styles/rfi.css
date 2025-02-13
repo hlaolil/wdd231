@@ -30,7 +30,7 @@ h1 {
 .navigation {
     display: flex;
     list-style: none;
-    background-color: #FFA500; /* Orange navigation */
+    background-color: yellow;
 }
 
 .navigation a {
