@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Letlotlo Hlaoli">
+    <meta name="description" content="Final project home page for WDD 231 - Web Frontend Development I">
+    <title>Chamber Home Page - Letlotlo Hlaoli</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <script defer src="scripts/home.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Properties for Facebook -->
+    <meta property="og:title" content="RFI Home Page - Letlotlo Hlaoli">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://hlaolil.github.io/wdd231/project/images/hero.webp">
+    <meta property="og:url" content="https://hlaolil.github.io/wdd231/project/index.html">
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="RFI Logo">
+        <!-- Hamburger Icon for mobile -->
+        <div class="ham-button" role="button" aria-expanded="false" aria-controls="navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="navigation">
+            <ul class="navigation">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">About Us</a></li>
+                <li><a href="directory.html">Ministries</a></li>
+                <li><a href="join.html">Get Involed</a></li>
+            </ul>    
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/hero.webp" media="(min-width: 1200px)">
+                <img src="images/hero1.webp" alt="Chamber hero">
+            </picture>
+            <h1>Revival Fellowship International</h1>
+            <a href="join.html" class="join-button">Get Involved</a>
+        </section>
+        <section class="home">
+            <div class="events"><h2>Events</h2></div>
+            <div class="current-weather">
+                <h2>Current Weather</h2>
+                <p id="weather-temp">Temperature: Loading...</p>
+                <p id="weather-desc">Description: Loading...</p>
+            </div>
+            <div class="weather-forecast">
+                <h2>3-Day Weather Forecast</h2>
+                <ul id="forecast-list">
+                    <!-- Weather forecast will populate here -->
+                </ul>
+            </div>
+        </section>
+        <section>
+            <button id="viewToggle" aria-label="Toggle view"></button>
+            <div class="spotlight">
+                <!-- Spotlight cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p id="symbol-date-name">
+                &copy; <span id="currentyear"></span> LSH Group Chamber - Butha-Buthe, LS
+            </p>
+            <p id="lastModified"></p>
+            <nav class="sociallinks">
+                <a href="https://facebook.com">
+                    <img src="images/facebook.webp" alt="Facebook" width="30">
+                </a>
+                <a href="https://twitter.com">
+                    <img src="images/twitter.webp" alt="Twitter" width="30">
+                </a>
+                <a href="https://instagram.com">
+                    <img src="images/instagram.webp" alt="Instagram" width="30">
+                </a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
