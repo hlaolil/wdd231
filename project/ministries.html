@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Letlotlo Hlaoli">
+    <meta name="description" content="Chamber project discover page for WDD 231 - Web Frontend Development I">
+    <title>Discover - Chamber Directory</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <script defer src="scripts/discover.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Properties for Facebook -->
+    <meta property="og:title" content="Chamber Directory - Letlotlo Hlaoli">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://hlaolil.github.io/wdd231/chamber/images/hero.webp">
+    <meta property="og:url" content="https://hlaolil.github.io/wdd231/chamber/directory.html">
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="LSH Group Chamber of Commerce Logo">
+        <!-- Hamburger Icon for mobile -->
+        <div class="ham-button" role="button" aria-expanded="false" aria-controls="navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="navigation">
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>    
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/hero.webp" media="(min-width: 1200px)">
+                <img src="images/hero1.webp" alt="Chamber hero">
+            </picture>
+            <h1>Discover Interesting Spots</h1>
+        </section>
+        <section>
+            <div class="grid-container">
+                <!-- Example for one card, repeat for 8 items -->
+            </div>
+        </section>
+        <!-- Modal Structure -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+        
+        <aside class="sidebar">
+            <p id="last-visit-message">Loading...</p> <!-- The message will be displayed here -->
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p id="symbol-date-name">
+                &copy; <span id="currentyear"></span> LSH Group Chamber - Butha-Buthe, LS
+            </p>
+            <p id="lastModified"></p>
+            <nav class="sociallinks">
+                <a href="https://facebook.com">
+                    <img src="images/facebook.webp" alt="Facebook" width="30">
+                </a>
+                <a href="https://twitter.com">
+                    <img src="images/twitter.webp" alt="Twitter" width="30">
+                </a>
+                <a href="https://instagram.com">
+                    <img src="images/instagram.webp" alt="Instagram" width="30">
+                </a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
