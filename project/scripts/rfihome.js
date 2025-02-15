@@ -113,57 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-const API_KEY = '3ba94e27626600d2c4a58e9b5d157562'; // Replace with your API key
-const LOCATION = 'Butha-Buthe, LS'; // Chamber location
-const UNITS = 'metric'; // Use 'imperial' for Fahrenheit
-
-const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${LOCATION}&units=${UNITS}&appid=${API_KEY}`;
-const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${LOCATION}&units=${UNITS}&appid=${API_KEY}`;
-
-// Function to fetch and display current weather
-async function getCurrentWeather() {
-    try {
-        const response = await fetch(weatherURL);
-        const data = await response.json();
-
-        // Extract and display data
-        const temp = Math.round(data.main.temp);
-        const description = data.weather[0].description;
-
-        document.getElementById('weather-temp').textContent = `Temperature: ${temp}°C`;
-        document.getElementById('weather-desc').textContent = `Description: ${description}`;
-    } catch (error) {
-        console.error('Error fetching current weather:', error);
-    }
-}
-
-// Function to fetch and display 3-day weather forecast
-async function getWeatherForecast() {
-    try {
-        const response = await fetch(forecastURL);
-        const data = await response.json();
-
-        const forecastList = document.getElementById('forecast-list');
-        forecastList.innerHTML = ''; // Clear previous content
-
-        // Extract forecast for the next 3 days
-        const dailyData = data.list.filter((entry) =>
-            entry.dt_txt.includes('12:00:00')
-        ).slice(0, 3);
-
-        dailyData.forEach((forecast) => {
-            const date = new Date(forecast.dt_txt).toLocaleDateString();
-            const temp = Math.round(forecast.main.temp);
-            const description = forecast.weather[0].description;
-
-            const listItem = document.createElement('li');
-            listItem.textContent = `${date}: ${temp}°C, ${description}`;
-            forecastList.appendChild(listItem);
-        });
-    } catch (error) {
-        console.error('Error fetching weather forecast:', error);
-    }
-}
 
 // Call the functions when the page loads
 document.addEventListener('DOMContentLoaded', () => {
@@ -209,13 +158,17 @@ function displaySpotlight() {
                 image: "prayer.jpg",
                 contact: "Kelebone Lekunya - +266 6320 6940"
             },
+
+            { 
+                
+                videoLink: "https://www.youtube.com/embed/wFws66W_Ftc?si=0ZHiZiXZBCDN7bwY" // Use the embedded video link
+            },
             { 
                 name: "Sunday Service", 
                 schedule: "Every Sunday, 10:00 - 13:00",
-                image: "sunday.jpg",
-                contact: "Church Office - +266 6223 3969"
+                image: "sunday_service.jpg",
+                contact: "Church Office - +266 765 4321"
             },
-            
         ];
 
         // Use a DocumentFragment for performance
@@ -226,12 +179,25 @@ function displaySpotlight() {
             const serviceCard = document.createElement("div");
             serviceCard.classList.add("spotlight-card"); // Add class for styling
 
-            serviceCard.innerHTML = `
-                <img src="images/${service.image}" alt="${service.name}" class="service-image">
-                <h3>${service.name}</h3>
-                <p><strong>Schedule:</strong> ${service.schedule}</p>
-                <p><strong>Contact:</strong> ${service.contact}</p>
-            `;
+            // If the service has a video link, embed the video
+            if (service.videoLink) {
+                serviceCard.innerHTML = `
+                    
+                    <div class="video-container">
+                        <iframe width="400" height="315" src="${service.videoLink}" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+                    </div>
+                `;
+            } else {
+                serviceCard.innerHTML = `
+                    <img src="images/${service.image}" alt="${service.name}" class="service-image">
+                    <h3>${service.name}</h3>
+                    <p><strong>Schedule:</strong> ${service.schedule}</p>
+                    <p><strong>Contact:</strong> ${service.contact}</p>
+                `;
+            }
 
             fragment.appendChild(serviceCard);
         });
