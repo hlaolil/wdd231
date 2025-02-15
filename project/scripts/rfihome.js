@@ -56,15 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Communion service", date: "23-Feb" },
         { name: "Night prayer", date: "21-Feb" },
         { name: "Leadership training", date: "11-Mar" },
-        { name: "Marriage seminar - Speaker Ntate Likhama", date: "25-Mar" },
+        { name: "Marriage seminar", date: "25-Mar" },
         { name: "Open air evangelism", date: "14-Jun" },
         { name: "Children’s conference", date: "21-Jun" },
         { name: "Ketekelo ea mosali ea khabane", date: "1-Aug" },
         { name: "Expedition Saturday Fun Walk from Sekubu", date: "30-Aug" },
         { name: "Rally for missions", date: "2-Nov" },
         { name: "Healing campaign & personal evangelism", date: "29-Nov" },
-        { name: "Small business development training - Moruti Hlaoli", date: "3-Dec" },
-        { name: "Revival Speaker - Moruti Lesana", date: "5-Dec" },
+        { name: "Small business development training", date: "3-Dec" },
+        { name: "Revival Speaker", date: "5-Dec" },
         { name: "Children’s dedication and baptism", date: "15-Dec" },
         { name: "Prison visits", date: "ad hoc" },
         { name: "Bible study", date: "Every Sunday" },
@@ -166,7 +166,7 @@ function displaySpotlight() {
             { 
                 name: "Sunday Service", 
                 schedule: "Every Sunday, 10:00 - 13:00",
-                image: "sunday_service.jpg",
+                image: "service.jpg",
                 contact: "Church Office - +266 765 4321"
             },
         ];

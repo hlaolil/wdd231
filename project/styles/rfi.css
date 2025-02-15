@@ -176,12 +176,16 @@ footer {
     border-radius: 10px;
 }
 
-.business-logo {
-    width: 50px;
-    height: 50px;
+.service-image {
+    width: 400px;
+    height: auto;
     margin-right: 20px;
     vertical-align: middle;
     border-radius: 10px;
+    object-fit: contain;
+}
+.video-container iframe {
+    object-fit: fill;
 }
 
 .home div {
@@ -200,7 +204,7 @@ h2 {
     color: white;
     font-size: 1.5em;
 }
-.events, .current-weather, .weather-forecast {
+.events, .contacts, .location {
     background-color: rgba(244, 226, 216, 0.8);
     padding: 1.5rem;
     border-radius: 10px;
@@ -208,18 +212,18 @@ h2 {
     margin: 1em 0;
     text-align: left;
 }
-.weather-forecast ul {
+.location ul {
     list-style-type: none;
     padding: 0;
     text-align: left;
 }
 
-.weather-forecast li {
+.location li {
     margin: 0.5em 0;
     font-size: 1rem;
     text-align: left;
 }
-.current-weather p {
+.contacts p {
     text-align: left;
 }
 /* Active link styling */
@@ -257,7 +261,7 @@ header img {
     display: flex;
     justify-content: space-around;
     gap: 1rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
     flex-wrap: wrap;
 }
 
@@ -267,11 +271,11 @@ header img {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    width: 300px;
+    width: 400px;
     text-align: center;
 }
 
-.spotlight-card img.business-logo {
+.spotlight-card img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
