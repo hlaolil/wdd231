@@ -1,22 +1,71 @@
+const hamButton = document.querySelector('.ham-button');
+const navigation = document.querySelector('.navigation');
+
+// Initial HTML content for the hamburger icon
+const hamburgerHTML = `
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        `;
+
+// Close icon HTML
+const closeIconHTML = '✖';
+
+// Track the state of the menu
+let isMenuOpen = false;
+
+hamButton.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen; // Toggle the menu state
+
+     if (isMenuOpen) {
+        hamButton.innerHTML = closeIconHTML; // Change to close icon
+        navigation.classList.add('show'); // Show the navigation
+        hamButton.setAttribute('aria-expanded', 'true'); // Update ARIA attribute
+    } else {
+        hamButton.innerHTML = hamburgerHTML; // Change back to hamburger icon
+        navigation.classList.remove('show'); // Hide the navigation
+        hamButton.setAttribute('aria-expanded', 'false'); // Update ARIA attribute
+    }
+});
+
+
+const year = document.querySelector("#currentyear");
+const lastModified = document.querySelector("#lastModified");
+
+// Get the current year for footer
+const date = new Date();
+year.textContent = date.getFullYear();
+
+// Get the last modification date of the home page
+let lastMod = document.lastModified;
+lastModified.textContent = `Last Modified: ${lastMod}`;
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const routineServices = [
         { 
             name: "Youth Meeting", 
             schedule: "Every Saturday, 15:00",
-            image: "youth.jpg",
+            image: "images/youth.jpg",
             contact: "Youth Leader - +266 5912 6226"
         },
         { 
             name: "Women’s Meeting", 
             schedule: "Every Thursday, 14:00",
-            image: "women.jpg",
+            image: "images/women.jpg",
             contact: "Women’s Ministry - +266 63135521"
         },
         {
             name: "Children's Ministry",
             schedule: "Every Sunday, 10:30 - 11:30",
-            image: "children.jpg",
+            image: "images/children.jpg",
             contact: "Teacher - +266 5919 3208"
+        },
+        {
+            name: "Men’s Fellowship",
+            schedule: "Every Monday, 18:00",
+            image: "images/men.jpg",
+            contact: "Men’s Ministry - +266 5987 4521"
         }
     ];
 
@@ -38,12 +87,23 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${service.image}" alt="${service.name}">
             <h3>${service.name}</h3>
             <p>${service.schedule}</p>
+            <button class="learn-more">Learn More</button>
         `;
 
-        card.addEventListener("click", () => {
+        // Open modal when clicking the card
+        const openModal = () => {
             modalTitle.textContent = service.name;
-            modalDescription.innerHTML = `<strong>Schedule:</strong> ${service.schedule}<br><strong>Contact:</strong> ${service.contact}`;
+            modalDescription.innerHTML = `
+                <strong>Schedule:</strong> ${service.schedule}<br>
+                <strong>Contact:</strong> ${service.contact}
+            `;
             modal.style.display = "flex";
+        };
+        
+        // Also open modal when clicking "Learn More" button
+        card.querySelector(".learn-more").addEventListener("click", (e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            openModal();
         });
 
         gridContainer.appendChild(card);
