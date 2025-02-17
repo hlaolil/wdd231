@@ -55,15 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Prayer and fasting", date: "2-Feb" },
         { name: "Communion service", date: "23-Feb" },
         { name: "Night prayer", date: "21-Feb" },
-        { name: "Leadership training", date: "11-Mar" },
-        { name: "Marriage seminar", date: "25-Mar" },
+        { name: "Leadership training", date: "01-May" },
+        { name: "Marriage seminar", date: "05-Apr" },
         { name: "Open air evangelism", date: "14-Jun" },
         { name: "Children’s conference", date: "21-Jun" },
         { name: "Ketekelo ea mosali ea khabane", date: "1-Aug" },
         { name: "Expedition Saturday Fun Walk from Sekubu", date: "30-Aug" },
         { name: "Rally for missions", date: "2-Nov" },
         { name: "Healing campaign & personal evangelism", date: "29-Nov" },
-        { name: "Small business development training", date: "3-Dec" },
+        { name: "Small business development training", date: "03-Dec" },
         { name: "Revival Speaker", date: "5-Dec" },
         { name: "Children’s dedication and baptism", date: "15-Dec" },
         { name: "Prison visits", date: "ad hoc" },
@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Church service", date: "Every Sunday" },
         { name: "Intercession", date: "Every Sunday" },
         { name: "Wednesday prayer meeting (Needs modification)", date: "TBD" },
+        { name: "Passover Conference", date: "17-Apr" },
       ];
   
       // Get today's date
