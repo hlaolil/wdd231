@@ -41,34 +41,7 @@ let lastMod = document.lastModified;
 lastModified.textContent = `Last Modified: ${lastMod}`;
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const routineServices = [
-        { 
-            name: "Youth Meeting", 
-            schedule: "Every Saturday, 15:00",
-            image: "images/youth.jpg",
-            contact: "Youth Leader - +266 5912 6226"
-        },
-        { 
-            name: "Women’s Meeting", 
-            schedule: "Every Thursday, 14:00",
-            image: "images/women.jpg",
-            contact: "Women’s Ministry - +266 63135521"
-        },
-        {
-            name: "Children's Ministry",
-            schedule: "Every Sunday, 10:30 - 11:30",
-            image: "images/children.jpg",
-            contact: "Teacher - +266 5919 3208"
-        },
-        {
-            name: "Men’s Fellowship",
-            schedule: "Every Monday, 18:00",
-            image: "images/men.jpg",
-            contact: "Men’s Ministry - +266 5987 4521"
-        }
-    ];
-
+document.addEventListener("DOMContentLoaded", async () => {
     const gridContainer = document.getElementById("ministriesGrid");
     const modal = document.getElementById("modal");
     const modalTitle = document.getElementById("modal-title");
@@ -77,47 +50,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ensure modal starts hidden
     modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
 
-    // Populate ministries dynamically
-    routineServices.forEach(service => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+    try {
+        // Fetch ministries from JSON file
+        const response = await fetch("ministries.json");
+        const routineServices = await response.json();
 
-        card.innerHTML = `
-            <img src="${service.image}" alt="${service.name}">
-            <h3>${service.name}</h3>
-            <p>${service.schedule}</p>
-            <button class="learn-more">Learn More</button>
-        `;
+        // Populate ministries dynamically
+        gridContainer.innerHTML = routineServices.map((service, index) => `
+            <div class="card" data-index="${index}" role="button" tabindex="0">
+                <img src="${service.image}" alt="${service.name}">
+                <h3>${service.name}</h3>
+                <p>${service.schedule}</p>
+                <button class="learn-more" data-index="${index}">Learn More</button>
+            </div>
+        `).join("");
 
-        // Open modal when clicking the card
-        const openModal = () => {
+        // Event delegation for opening modal
+        gridContainer.addEventListener("click", (event) => {
+            const target = event.target.closest(".card, .learn-more");
+            if (!target) return;
+            
+            const index = target.dataset.index;
+            const service = routineServices[index];
+
             modalTitle.textContent = service.name;
             modalDescription.innerHTML = `
                 <strong>Schedule:</strong> ${service.schedule}<br>
                 <strong>Contact:</strong> ${service.contact}
             `;
             modal.style.display = "flex";
-        };
-        
-        // Also open modal when clicking "Learn More" button
-        card.querySelector(".learn-more").addEventListener("click", (e) => {
-            e.stopPropagation(); // Prevent event bubbling
-            openModal();
+            modal.setAttribute("aria-hidden", "false");
         });
 
-        gridContainer.appendChild(card);
-    });
+    } catch (error) {
+        console.error("Error loading ministries data:", error);
+    }
 
     // Close modal when clicking the close button
     closeModal.addEventListener("click", () => {
         modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
     });
 
     // Close modal when clicking outside of it
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+        }
+    });
+
+    // Allow closing modal with Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
         }
     });
 });
