@@ -54,7 +54,7 @@ header {
 .ham-button .bar {
     width: 25px;
     height: 3px;
-    background-color: teal;
+    background-color: orange;
     border-radius: 3px;
 }
 
