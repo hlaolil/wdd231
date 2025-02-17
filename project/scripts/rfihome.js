@@ -1,3 +1,6 @@
+// Set the current timestamp
+document.getElementById('timestamp').value = new Date().toLocaleString();
+
 const hamButton = document.querySelector('.ham-button');
 const navigation = document.querySelector('.navigation');
 
