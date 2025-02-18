@@ -16,6 +16,7 @@ header {
     display: flex;
     list-style: none;
     background-color: orange;
+    border-radius: 5px;
     
 }
 
