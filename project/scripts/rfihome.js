@@ -114,26 +114,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-window.addEventListener('load', function () {
-    let currentLocation = window.location.pathname.replace(/\/$/, ''); // Get current path, remove trailing slash
-    const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
+window.addEventListener('DOMContentLoaded', function () {
+    let currentLocation = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+    const navLinks = document.querySelectorAll('nav ul li a'); // Get all nav links
 
-    // Treat root path `/` as `/index.html` for comparison
-    if (currentLocation === '') {
+    // Treat root `/` as `/index.html` for comparison
+    if (currentLocation === '' || currentLocation === '/') {
         currentLocation = '/index.html';
     }
 
     navLinks.forEach(link => {
-        const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, ''); // Ensure absolute URL
+        const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, ''); // Normalize path
 
         if (linkPath === currentLocation) {
-            link.classList.add('active'); // Add active class to the current page link
+            link.classList.add('active'); // Apply active class
         } else {
-            link.classList.remove('active'); // Ensure others don't have it
+            link.classList.remove('active'); // Remove from others
         }
     });
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
     displaySpotlight(); // Load spotlight section
