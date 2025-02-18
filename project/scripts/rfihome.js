@@ -136,7 +136,6 @@ window.addEventListener('load', function() {
 
 document.addEventListener("DOMContentLoaded", () => {
     displaySpotlight(); // Load spotlight section
-    displayUpcomingEvents(); // Load upcoming events section
 });
 
 // Function to display the spotlight (Routine Services)
