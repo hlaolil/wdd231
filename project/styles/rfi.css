@@ -220,6 +220,9 @@ h2 {
     padding: 0;
     text-align: left;
 }
+.location iframe {
+    border-radius: 5px;
+}
 
 .location li {
     margin: 0.5em 0;
