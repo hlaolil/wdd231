@@ -114,13 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-// Call the functions when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    getCurrentWeather();
-    getWeatherForecast();
-});
-
 window.addEventListener('load', function() {
     const currentLocation = window.location.pathname.replace(/\/$/, ''); // Get current path, remove trailing slash
     const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
