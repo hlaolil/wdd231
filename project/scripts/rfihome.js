@@ -114,25 +114,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-window.addEventListener('DOMContentLoaded', function () {
-    let currentLocation = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
-    const navLinks = document.querySelectorAll('nav ul li a'); // Get all nav links
+document.addEventListener('DOMContentLoaded', function () {
+    let currentLocation = window.location.pathname;
 
-    // Treat root `/` as `/index.html` for comparison
-    if (currentLocation === '' || currentLocation === '/') {
+    // Normalize by ensuring it doesn't end with a trailing slash unless it's root
+    if (currentLocation.length > 1) {
+        currentLocation = currentLocation.replace(/\/$/, '');
+    }
+
+    // Treat root `/` as `/index.html` (modify if your home page has a different file name)
+    if (currentLocation === '/') {
         currentLocation = '/index.html';
     }
 
-    navLinks.forEach(link => {
-        const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, ''); // Normalize path
+    const navLinks = document.querySelectorAll('nav ul li a'); // Select all nav links
 
+    navLinks.forEach(link => {
+        const linkPath = new URL(link.getAttribute('href'), window.location.origin).pathname;
+
+        // Normalize the link path
+        if (linkPath.length > 1) {
+            linkPath = linkPath.replace(/\/$/, '');
+        }
+
+        // Add active class to the matching link
         if (linkPath === currentLocation) {
-            link.classList.add('active'); // Apply active class
+            link.classList.add('active');
         } else {
-            link.classList.remove('active'); // Remove from others
+            link.classList.remove('active');
         }
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     displaySpotlight(); // Load spotlight section
