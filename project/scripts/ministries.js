@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Populate ministries dynamically
         gridContainer.innerHTML = routineServices.map((service, index) => `
             <div class="card" data-index="${index}" role="button" tabindex="0">
-                <img src="${service.image}" alt="${service.name}">
+                <img src="${service.image}" alt="${service.name}" loading="lazy">
                 <h3>${service.name}</h3>
                 <p>${service.schedule}</p>
                 <button class="learn-more" data-index="${index}">Learn More</button>
