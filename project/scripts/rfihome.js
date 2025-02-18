@@ -134,11 +134,6 @@ window.addEventListener('load', function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    displaySpotlight(); // Load spotlight section
-    displayUpcomingEvents(); // Load upcoming events section
-});
-
 // Function to display the spotlight (Routine Services)
 function displaySpotlight() {
     const spotlightSection = document.querySelector(".spotlight"); // Select the spotlight section
