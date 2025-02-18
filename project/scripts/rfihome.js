@@ -204,7 +204,11 @@ function displaySpotlight() {
     }
 }
 
-// Set the current timestamp
-document.getElementById('timestamp').value = new Date().toLocaleString();
+let timestampInput = document.getElementById('timestamp');
+if (timestampInput) {
+    timestampInput.value = new Date().toLocaleString();
+} else {
+    console.error("Element with ID 'timestamp' not found");
+}
 
 
