@@ -202,5 +202,11 @@ function displaySpotlight() {
         console.error("The '.spotlight' section was not found.");
     }
 }
+let timestampInput = document.getElementById('timestamp');
+if (timestampInput) {
+    timestampInput.value = new Date().toLocaleString();
+} else {
+    console.error("Element with ID 'timestamp' not found");
+}
 
 
