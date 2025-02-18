@@ -185,7 +185,7 @@ function displaySpotlight() {
                 `;
             } else {
                 serviceCard.innerHTML = `
-                    <img src="images/${service.image}" alt="${service.name}" class="service-image">
+                    <img src="images/${service.image}" alt="${service.name}" class="service-image" loading="lazy">
                     <h3>${service.name}</h3>
                     <p><strong>Schedule:</strong> ${service.schedule}</p>
                     <p><strong>Contact:</strong> ${service.contact}</p>
