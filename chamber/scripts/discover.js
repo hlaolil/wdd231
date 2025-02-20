@@ -83,7 +83,7 @@ async function populatePlacesDirectory() {
 
     try {
         // Fetch the JSON file
-        const response = await fetch('places.json');
+        const response = await fetch('data/places.json');
         if (!response.ok) throw new Error('Failed to fetch the JSON file');
 
         // Parse the JSON data
