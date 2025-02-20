@@ -325,3 +325,29 @@ button:hover {
   text-decoration: none;
 }
 
+
+/* Course Button Styles */
+.course-card {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.course-card:hover {
+  background-color: #eaeaea;
+}
+
+/* Completed vs. Incomplete */
+.course-card.completed {
+  border-color: #4caf50;
+}
+
+.course-card.incomplete {
+  border-color: #f44336;
+}
+
