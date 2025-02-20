@@ -337,17 +337,3 @@ button:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-.course-card:hover {
-  background-color: #eaeaea;
-}
-
-/* Completed vs. Incomplete */
-.course-card.completed {
-  border-color: #4caf50;
-}
-
-.course-card.incomplete {
-  border-color: #f44336;
-}
-
