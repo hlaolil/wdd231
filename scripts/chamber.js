@@ -100,14 +100,78 @@ function filterCourses(filter) {
   }
 }
 
-<!-- Modal Structure -->
-<div id="course-modal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <span id="modal-close" class="close">&times;</span>
-    <div id="modal-details"></div>
-  </div>
-</div>
+// Render courses dynamically as buttons that open a modal
+function renderCourses(filteredCourses) {
+  const coursesDiv = document.getElementById('courses');
+  coursesDiv.innerHTML = ''; // Clear previous content
 
+  let totalCredits = 0;
+
+  filteredCourses.forEach(course => {
+    // Create a button element for the course
+    const courseButton = document.createElement('button');
+    courseButton.classList.add('course-card', course.completed ? 'completed' : 'incomplete');
+    
+    // Instead of innerHTML with just a paragraph, add content to the button:
+    courseButton.innerHTML = `<p><strong>${course.subject} ${course.number}</strong></p>`;
+    
+    // Add an event listener to open the modal with course details
+    courseButton.addEventListener('click', () => {
+      openCourseModal(course);
+    });
+
+    totalCredits += course.credits || 0;
+    coursesDiv.appendChild(courseButton);
+  });
+
+  // Update total credits dynamically
+  const creditDiv = document.getElementById('total-credits');
+  creditDiv.textContent = `Total Credits: ${totalCredits}`;
+}
+
+// Function to open modal and display course details
+function openCourseModal(course) {
+  const modal = document.getElementById('course-modal');
+  const modalDetails = document.getElementById('modal-details');
+
+  // Populate modal details (customize as needed)
+  modalDetails.innerHTML = `
+    <h2>${course.subject} ${course.number}</h2>
+    <p><strong>Name:</strong> ${course.name || 'N/A'}</p>
+    <p><strong>Credits:</strong> ${course.credits || 'N/A'}</p>
+    <p><strong>Status:</strong> ${course.completed ? 'Completed' : 'In Progress'}</p>
+    <p><strong>Description:</strong> ${course.description || 'No description available.'}</p>
+  `;
+
+  // Display the modal
+  modal.style.display = 'block';
+}
+
+// Event listener to close modal when clicking on the close button
+document.getElementById('modal-close').addEventListener('click', () => {
+  document.getElementById('course-modal').style.display = 'none';
+});
+
+// Optional: close modal when clicking outside of modal content
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById('course-modal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Button event listeners to filter courses remain the same
+document.getElementById('all-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('all'));
+});
+
+document.getElementById('wdd-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('wdd'));
+});
+
+document.getElementById('cse-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('cse'));
+});
 
 // Initial render for all courses
 renderCourses(courses);
