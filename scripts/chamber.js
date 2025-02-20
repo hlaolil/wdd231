@@ -137,7 +137,7 @@ function openCourseModal(course) {
   // Populate modal details (customize as needed)
   modalDetails.innerHTML = `
     <h2>${course.subject} ${course.number}</h2>
-    <p><strong>Name:</strong> ${course.name || 'N/A'}</p>
+    <p><strong>Name:</strong> ${course.title || 'N/A'}</p>
     <p><strong>Credits:</strong> ${course.credits || 'N/A'}</p>
     <p><strong>Status:</strong> ${course.completed ? 'Completed' : 'In Progress'}</p>
     <p><strong>Description:</strong> ${course.description || 'No description available.'}</p>
