@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('nav ul li a'); // Select all nav links
 
     navLinks.forEach(link => {
-        const linkPath = new URL(link.getAttribute('href'), window.location.origin).pathname;
+        let linkPath = new URL(link.getAttribute('href'), window.location.origin).pathname;
 
         // Normalize the link path
         if (linkPath.length > 1) {

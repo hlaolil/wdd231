@@ -350,3 +350,16 @@ button:hover {
 .course-card.incomplete {
   border-color: #f44336;
 }
+
+/* --- Mobile fixes --- */
+img { max-width: 100%; height: auto; }
+@media (max-width: 768px) {
+    html, body { display: block; place-items: normal; height: auto; }
+    footer { width: auto; }
+    body > div, header, main, footer { max-width: 100%; box-sizing: border-box; }
+    nav ul { flex-wrap: wrap; gap: .5rem 1rem; }
+    .content-area { grid-template-columns: 1fr; }
+    .card { min-width: 0; margin: 10px 0; }
+    .card:nth-child(3) { grid-column: auto; }
+}
+.work { flex-wrap: wrap; }

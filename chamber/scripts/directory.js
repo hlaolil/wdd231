@@ -209,6 +209,7 @@ window.addEventListener('load', function() {
 // Function to fetch and display spotlight members
 async function displaySpotlight() {
     const spotlightSection = document.querySelector('.spotlight'); // Select the spotlight section
+    if (!spotlightSection) return; // this page has no spotlight section
 
     try {
         // Fetch the JSON file

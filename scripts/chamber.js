@@ -207,12 +207,12 @@ hamButton.addEventListener('click', () => {
 });
 
 window.addEventListener('load', function() {
-    const currentLocation = window.location.pathname.replace(/\/$/, ''); // Get current path, remove trailing slash
+    let currentLocation = window.location.pathname.replace(/\/$/, ''); // Get current path, remove trailing slash
     const navLinks = document.querySelectorAll('nav ul li a'); // Select all navigation links
 
     // Treat root path `/` as `/index.html` for comparison
-    if (currentPath === '') {
-        currentPath = '/index.html';
+    if (currentLocation === '' || currentLocation.endsWith('/wdd231')) {
+        currentLocation += '/index.html';
     }
     
     navLinks.forEach(link => {

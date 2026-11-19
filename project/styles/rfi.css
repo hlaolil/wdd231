@@ -336,3 +336,10 @@ header img {
 .spotlight a {
     color: black;
 }
+
+/* --- Mobile fixes --- */
+img { max-width: 100%; height: auto; }
+.events, .contacts, .location { max-width: 100%; box-sizing: border-box; min-width: 0; }
+.spotlight-card { max-width: 100%; box-sizing: border-box; }
+iframe { max-width: 100%; }
+@media (max-width: 600px) { .service-image { margin-right: 0; } }
