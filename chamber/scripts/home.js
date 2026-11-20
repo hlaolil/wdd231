@@ -49,10 +49,8 @@ if (eventsDiv) { // Ensure the container exists
 
   // Define the events
   const events = [
-    "Tech Meetup",
-    "Workshop on Web Development",
-    "Hackathon 2025",
-    "Networking Session"
+    "No events are scheduled yet.",
+    "Members can suggest one when they join."
   ];
 
   // Populate the list with events
@@ -166,7 +164,7 @@ async function displaySpotlight() {
         // Featured members always appear; the rest of the 3 spotlight places are filled at random
         const featured = spotlightMembers.filter((member) => member.featured);
         const others = spotlightMembers.filter((member) => !member.featured);
-        const selectedMembers = [...featured, ...getRandomMembers(others, Math.max(0, 3 - featured.length))];
+        const selectedMembers = [...featured, ...getRandomMembers(others, Math.max(0, 3 - featured.length))].slice(0, 3);
 
         // Use a DocumentFragment for better performance
         const fragment = document.createDocumentFragment();
@@ -183,7 +181,7 @@ async function displaySpotlight() {
                 <h3>${name || 'Unknown Business'}</h3>
                 <p><strong>Address:</strong> ${address}</p>
                 <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Website:</strong> <a href="${website}" target="_blank">${name || 'Visit Website'}</a></p>
+                <p><strong>Website:</strong> <a href="${website}" target="_blank" rel="noopener">Visit website</a></p>
                 <p><strong>Membership Level:</strong> ${getMembershipLevel(membershipLevel)}</p>
             `;
 

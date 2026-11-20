@@ -337,3 +337,10 @@ button:focus {
     }
   }
   
+/* ---- 2026 refresh ---- */
+.hero h1 { top: 50%; transform: translate(-50%, -50%); width: max-content; max-width: 90%; text-align: center; padding: .3em .6em; font-size: clamp(1.4em, 4vw, 2.2em); }
+.section-title { background: #6eaacc; color: #0c2233; text-align: center; margin: 1.5rem 0 1rem; padding: .3rem; border-radius: 8px; }
+.events-list { list-style: none; padding: 0 .5rem; text-align: center; }
+.events-list li:hover { color: inherit; cursor: default; text-decoration: none; }
+
+#last-visit-message { max-width: 1100px; margin: 1rem auto; padding: .7rem 1rem; background: #eef6fb; border-left: 4px solid #6eaacc; border-radius: 6px; text-align: center; }

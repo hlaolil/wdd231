@@ -328,3 +328,22 @@ header img {
     cursor: pointer; /* Indicate interactivity */
     text-decoration: underline; /* Underline for emphasis */
   }
+
+/* ---- 2026 refresh ---- */
+.hero h1 { top: 50%; transform: translate(-50%, -50%); width: max-content; max-width: 90%; text-align: center; padding: .3em .6em; font-size: clamp(1.4em, 4vw, 2.2em); }
+.section-title { background: #6eaacc; color: #0c2233; text-align: center; margin: 1.5rem 0 1rem; padding: .3rem; border-radius: 8px; }
+.events-list { list-style: none; padding: 0 .5rem; text-align: center; }
+.events-list li:hover { color: inherit; cursor: default; text-decoration: none; }
+
+.view-bar { display: flex; justify-content: flex-end; max-width: 1100px; margin: 0 auto .6rem; padding: 0 1rem; }
+#viewToggle { font: inherit; padding: .5rem 1rem; border: 1px solid #0c2233; background: #fff; color: #0c2233; border-radius: 999px; cursor: pointer; }
+#viewToggle:hover, #viewToggle:focus-visible { background: #0c2233; color: #fff; }
+.directory { max-width: 1100px; margin: 0 auto 2rem; padding: 0 1rem; }
+.directory.grid-view { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-template-rows: none; }
+.directory.list-view { display: block; }
+.business-entry { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 0; }
+.directory.list-view .business-entry { margin-bottom: 1rem; }
+.business-entry .business-logo { width: 80px; height: 80px; margin: 0 0 .6rem; }
+.business-entry h3 { margin: .2rem 0 .6rem; }
+.business-entry p { margin: .35rem 0; }
+.business-entry a { color: #0b5ed7; overflow-wrap: anywhere; }

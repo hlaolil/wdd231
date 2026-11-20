@@ -48,13 +48,13 @@ async function populateDirectoryFromJSON() {
             businessDiv.classList.add('business-entry'); // Add class for styling
 
             businessDiv.innerHTML = `
-                <img src="images/${business.image}" alt="${business.name} Logo" class="business-logo">
+                <img src="images/${business.image}" alt="${business.name} logo" width="80" height="80" class="business-logo">
                 <h3>${business.name}</h3>
                 <p><strong>Address:</strong> ${business.address}</p>
                 <p><strong>Phone:</strong> ${business.phone}</p>
-                <p><strong>Website:</strong> <a href="${business.website}" target="_blank">${business.website}</a></p>
+                <p><strong>Website:</strong> <a href="${business.website}" target="_blank" rel="noopener">${business.website.replace(/^https?:\/\//, "")}</a></p>
                 <p><strong>Membership Level:</strong> ${getMembershipLevel(business.membershipLevel)}</p>
-                <p><strong>Other Information:</strong> ${business.otherInfo}</p>
+                <p>${business.otherInfo}</p>
             `;
 
             directorySection.appendChild(businessDiv);
@@ -78,7 +78,10 @@ function getMembershipLevel(level) {
 function toggleView() {
     const directorySection = document.querySelector('.directory');
     directorySection.classList.toggle('grid-view');
-    directorySection.classList.toggle('list-view');
+    const isList = directorySection.classList.toggle('list-view');
+    const button = document.getElementById('viewToggle');
+    button.textContent = isList ? 'Show as cards' : 'Show as list';
+    button.setAttribute('aria-pressed', String(isList));
 }
 
 // Add event listener to the toggle button
@@ -109,10 +112,8 @@ if (eventsDiv) { // Ensure the container exists
 
   // Define the events
   const events = [
-    "Tech Meetup",
-    "Workshop on Web Development",
-    "Hackathon 2025",
-    "Networking Session"
+    "No events are scheduled yet.",
+    "Members can suggest one when they join."
   ];
 
   // Populate the list with events
@@ -227,7 +228,7 @@ async function displaySpotlight() {
         // Featured members always appear; the rest of the 3 spotlight places are filled at random
         const featured = spotlightMembers.filter((member) => member.featured);
         const others = spotlightMembers.filter((member) => !member.featured);
-        const selectedMembers = [...featured, ...getRandomMembers(others, Math.max(0, 3 - featured.length))];
+        const selectedMembers = [...featured, ...getRandomMembers(others, Math.max(0, 3 - featured.length))].slice(0, 3);
 
         // Use a DocumentFragment for better performance
         const fragment = document.createDocumentFragment();
@@ -244,7 +245,7 @@ async function displaySpotlight() {
                 <h3>${name || 'Unknown Business'}</h3>
                 <p><strong>Address:</strong> ${address}</p>
                 <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Website:</strong> <a href="${website}" target="_blank">${name || 'Visit Website'}</a></p>
+                <p><strong>Website:</strong> <a href="${website}" target="_blank" rel="noopener">Visit website</a></p>
                 <p><strong>Membership Level:</strong> ${getMembershipLevel(membershipLevel)}</p>
             `;
 
