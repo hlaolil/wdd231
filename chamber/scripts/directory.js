@@ -36,7 +36,7 @@ async function populateDirectoryFromJSON() {
 
     try {
         // Fetch the JSON file
-        const response = await fetch('data/member.json');
+        const response = await fetch('data/member.json', { cache: 'no-cache' });
         if (!response.ok) throw new Error('Failed to fetch the JSON file');
 
         // Parse the JSON data
@@ -214,7 +214,7 @@ async function displaySpotlight() {
 
     try {
         // Fetch the JSON file
-        const response = await fetch('data/member.json');
+        const response = await fetch('data/member.json', { cache: 'no-cache' });
         if (!response.ok) throw new Error('Failed to fetch the JSON file');
 
         // Parse the JSON data
