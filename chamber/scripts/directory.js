@@ -224,8 +224,10 @@ async function displaySpotlight() {
             (member) => member.membershipLevel === 2 || member.membershipLevel === 3
         );
 
-        // Randomly select two or three members for the spotlight
-        const selectedMembers = getRandomMembers(spotlightMembers, 2 + Math.floor(Math.random() * 2));
+        // Featured members always appear; the rest of the 3 spotlight places are filled at random
+        const featured = spotlightMembers.filter((member) => member.featured);
+        const others = spotlightMembers.filter((member) => !member.featured);
+        const selectedMembers = [...featured, ...getRandomMembers(others, Math.max(0, 3 - featured.length))];
 
         // Use a DocumentFragment for better performance
         const fragment = document.createDocumentFragment();
