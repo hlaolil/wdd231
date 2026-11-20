@@ -85,6 +85,116 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 212,
+        title: 'Programming with Data Structures',
+        credits: 2,
+        certificate: 'Software Development',
+        description: 'Uses stacks, queues, linked lists, sets, maps and trees to solve problems, with attention to how the choice of data structure affects performance.',
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 330,
+        title: 'Web Frontend Development II',
+        credits: 3,
+        certificate: 'Web Development',
+        description: 'Builds larger frontend applications with modular JavaScript, third-party APIs, build tools and client-side storage, ending in an individual project.',
+        technology: ['HTML', 'CSS', 'JavaScript', 'Vite'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 340,
+        title: 'Web Backend Development',
+        credits: 3,
+        certificate: 'Web Development',
+        description: 'Server-side web development with the MVC pattern: routing, templating, data validation, sessions and a relational database behind a working web application.',
+        technology: ['Node.js', 'Express', 'EJS', 'PostgreSQL'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 341,
+        title: 'Web Services',
+        credits: 3,
+        certificate: 'Web Development',
+        description: 'Designs, documents and deploys REST APIs, with a NoSQL database, OAuth authentication and API documentation.',
+        technology: ['Node.js', 'Express', 'MongoDB', 'Swagger'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 430,
+        title: 'Web Full-Stack Development',
+        credits: 3,
+        certificate: 'Web Development',
+        description: 'A team course that builds a full-stack application with a modern framework, from frontend components to the database and deployment.',
+        technology: ['Next.js', 'React', 'TypeScript', 'PostgreSQL'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 270,
+        title: 'Software Testing',
+        credits: 3,
+        certificate: 'Software Development',
+        description: 'Plans and carries out software testing: test cases, test campaigns, defect tracking, and unit and automated testing.',
+        technology: ['Squash TM', 'Python'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 325,
+        title: '.NET Software Development',
+        credits: 3,
+        certificate: 'Software Development',
+        description: 'Builds web applications on the .NET platform with C#, Blazor and Entity Framework, working with data and deploying the result.',
+        technology: ['C#', '.NET', 'Blazor'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 310,
+        title: 'Applied Programming',
+        credits: 3,
+        certificate: 'Software Development',
+        description: 'Self-directed sprints that learn a new language, framework or skill in each module and build a small project to show it.',
+        technology: ['C#', 'Python', 'pandas'],
+        completed: false
+    },
+    {
+        subject: 'REL',
+        number: 200,
+        title: 'The Eternal Family',
+        credits: 2,
+        certificate: 'Religion',
+        description: 'Gospel principles of marriage, parenthood and family life.',
+        technology: [],
+        completed: true
+    },
+    {
+        subject: 'HUM',
+        number: 110,
+        title: 'Discovery & Discernment Through the Arts',
+        credits: 3,
+        certificate: 'General Education',
+        description: 'Explores how art, music and literature express questions of truth, beauty and meaning, and how to respond to them thoughtfully.',
+        technology: [],
+        completed: false
+    },
+    {
+        subject: 'GESCI',
+        number: 110,
+        title: 'Sustaining Human Life',
+        credits: 3,
+        certificate: 'General Education',
+        description: 'Science for everyday life: the systems that sustain human health, food, water and environment, applied in a course project.',
+        technology: [],
         completed: false
     }
 ]
@@ -95,6 +205,8 @@ function filterCourses(filter) {
       return courses.filter(course => course.subject === 'WDD');
     case 'cse':
       return courses.filter(course => course.subject === 'CSE');
+    case 'other':
+      return courses.filter(course => !['WDD', 'CSE'].includes(course.subject));
     default:
       return courses; // All courses
   }
@@ -126,7 +238,7 @@ function renderCourses(filteredCourses) {
 
   // Update total credits dynamically
   const creditDiv = document.getElementById('total-credits');
-  creditDiv.textContent = `Total Credits: ${totalCredits}`;
+  creditDiv.textContent = totalCredits;
 }
 
 // Function to open modal and display course details
@@ -139,6 +251,8 @@ function openCourseModal(course) {
     <h2>${course.subject} ${course.number}</h2>
     <p><strong>Name:</strong> ${course.title || 'N/A'}</p>
     <p><strong>Credits:</strong> ${course.credits || 'N/A'}</p>
+    <p><strong>Certificate:</strong> ${course.certificate || 'N/A'}</p>
+    ${course.technology && course.technology.length ? `<p><strong>Technology:</strong> ${course.technology.join(', ')}</p>` : ''}
     <p><strong>Status:</strong> ${course.completed ? 'Completed' : 'In Progress'}</p>
     <p><strong>Description:</strong> ${course.description || 'No description available.'}</p>
   `;
@@ -167,6 +281,10 @@ document.getElementById('all-courses-btn').addEventListener('click', () => {
 
 document.getElementById('wdd-courses-btn').addEventListener('click', () => {
   renderCourses(filterCourses('wdd'));
+});
+
+document.getElementById('other-courses-btn').addEventListener('click', () => {
+  renderCourses(filterCourses('other'));
 });
 
 document.getElementById('cse-courses-btn').addEventListener('click', () => {

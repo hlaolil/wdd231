@@ -61,5 +61,23 @@
         "image": "fintech-innovations-logo.png",
         "membershipLevel": 3,
         "otherInfo": "Transforming the future of financial services with cutting-edge tech."
+    },
+    {
+        "name": "Grace Pharmacy",
+        "address": "Along A2 Road, Makotoane Complex, Morija 100, Lesotho",
+        "phone": "+266 5617 6099",
+        "website": "https://gracepharmacy.vercel.app",
+        "image": "grace-pharmacy-logo.webp",
+        "membershipLevel": 3,
+        "otherInfo": "Community pharmacy in Morija for prescriptions, refills, over-the-counter medicines and health advice. Open Monday–Friday 8am–5pm and Saturday 8am–1pm."
+    },
+    {
+        "name": "The Healing Hub Pharmacy",
+        "address": "Ha Leqele, Maseru, Lesotho",
+        "phone": "+266 5617 6099",
+        "website": "https://healing-hub-pharmacy.vercel.app",
+        "image": "healing-hub-logo.webp",
+        "membershipLevel": 3,
+        "otherInfo": "Retail pharmacy at Ha Leqele, Maseru, serving the surrounding villages with fast prescription refills, over-the-counter medicines and pharmacist advice."
     }
 ]
